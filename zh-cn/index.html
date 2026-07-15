@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5f55e8">
+  <meta name="description" content="紫霞浏览器是一款面向 Android 的多功能浏览器，集 AI 助手、广告拦截、脚本扩展、网页视频倍速、沉浸阅读与听书于一体。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="紫霞浏览器｜浏览、阅读与 AI，一处完成">
+  <meta property="og:description" content="清爽浏览、AI 理解、脚本扩展、视频倍速、阅读与听书。仅提供 Android APK 下载。">
+  <meta property="og:image" content="https://www.52zixia.com/assets/screens/1.jpg">
+  <meta property="og:url" content="https://www.52zixia.com/zh-cn/">
+  <link rel="canonical" href="https://www.52zixia.com/zh-cn/">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/zh-cn/">
+  <link rel="alternate" hreflang="en" href="https://www.52zixia.com/">
+  <link rel="alternate" hreflang="x-default" href="https://www.52zixia.com/">
+  <title>紫霞浏览器｜Android 浏览器</title>
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <script>
+    if (new URLSearchParams(window.location.search).get('lang') === 'en') {
+      window.location.replace('../?lang=en');
+    }
+  </script>
+  <style>
+    :root {
+      --ink: #17172a;
+      --muted: #65657b;
+      --line: rgba(28, 25, 74, .1);
+      --violet: #6459ef;
+      --violet-dark: #4338b7;
+      --blue: #3378f4;
+      --paper: #f8f8fc;
+      --white: #fff;
+      --shadow: 0 28px 70px rgba(40, 33, 111, .15);
+      --radius: 30px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(31, 28, 79, .78);
+      color: #fff;
+      backdrop-filter: blur(18px) saturate(150%);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-size: 19px; font-weight: 760; letter-spacing: .01em; }
+    .brand img { width: 38px; height: 38px; border-radius: 12px; box-shadow: 0 8px 24px rgba(13, 9, 65, .28); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; color: rgba(255,255,255,.8); }
+    .nav-links a:hover { color: #fff; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 720;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #fff; background: linear-gradient(135deg, #7468ff, #367df5); box-shadow: 0 14px 32px rgba(71, 78, 227, .35); }
+    .button-primary:hover { box-shadow: 0 18px 38px rgba(71, 78, 227, .44); }
+    .button-ghost { color: #fff; border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.08); }
+    .nav-download { min-height: 40px; padding: 0 17px; font-size: 14px; background: #fff; color: #3f38aa; }
+    .download-icon { width: 18px; height: 18px; flex: 0 0 auto; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 820px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 75% 22%, rgba(66, 155, 255, .72), transparent 34%),
+        radial-gradient(circle at 18% 15%, rgba(162, 112, 255, .6), transparent 34%),
+        linear-gradient(145deg, #1e1a53 5%, #4c3fc5 48%, #262763 100%);
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      pointer-events: none;
+    }
+    .hero::before { width: 720px; height: 720px; left: -290px; bottom: -390px; background: rgba(119, 88, 244, .3); }
+    .hero::after { width: 620px; height: 620px; right: -260px; top: 170px; border: 1px solid rgba(255,255,255,.16); }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      min-height: 748px;
+      gap: 70px;
+      padding: 76px 0 90px;
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 8px 13px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(255,255,255,.09); color: rgba(255,255,255,.85); font-size: 13px; font-weight: 700; }
+    .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: #8bd6ff; box-shadow: 0 0 0 5px rgba(139,214,255,.14); }
+    .hero h1 { max-width: 660px; margin: 24px 0 20px; font-size: clamp(52px, 6vw, 86px); line-height: 1.05; letter-spacing: -.045em; }
+    .hero h1 span { color: #b9d8ff; }
+    .hero-copy { max-width: 610px; margin: 0 0 32px; color: rgba(255,255,255,.78); font-size: clamp(18px, 2vw, 22px); line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px; color: rgba(255,255,255,.58); font-size: 13px; }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
+    .check { width: 17px; height: 17px; display: grid; place-items: center; border-radius: 50%; background: rgba(130, 221, 255, .16); color: #a8e6ff; font-size: 11px; }
+
+    .hero-visual { position: relative; height: 690px; }
+    .phone-shot {
+      position: absolute;
+      width: 368px;
+      border-radius: 42px;
+      box-shadow: 0 35px 80px rgba(10, 8, 46, .45);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .phone-shot.front { right: 0; top: 0; transform: rotate(3deg); z-index: 2; }
+    .phone-shot.back { width: 310px; left: 0; bottom: -70px; transform: rotate(-6deg); opacity: .88; }
+    .float-chip {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 178px;
+      padding: 14px 17px;
+      border: 1px solid rgba(255,255,255,.32);
+      border-radius: 18px;
+      background: rgba(255,255,255,.88);
+      color: #2f2d59;
+      box-shadow: 0 18px 42px rgba(16,11,58,.28);
+      backdrop-filter: blur(16px);
+      font-weight: 720;
+    }
+    .float-chip small { display: block; margin-top: 2px; color: #77758f; font-size: 11px; font-weight: 600; }
+    .float-chip.one { left: -42px; top: 170px; }
+    .float-chip.two { right: -45px; bottom: 105px; }
+    .chip-icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 12px; background: #eceaff; color: #574fe1; font-size: 18px; }
+
+    .section { padding: 112px 0; }
+    .section-kicker { color: var(--violet); font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .section-title { max-width: 800px; margin: 13px 0 16px; font-size: clamp(36px, 5vw, 62px); line-height: 1.16; letter-spacing: -.035em; }
+    .section-lead { max-width: 720px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.8; }
+
+    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 54px; }
+    .feature-card { padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: #fff; box-shadow: 0 12px 36px rgba(36,31,95,.06); }
+    .feature-card-icon { width: 50px; height: 50px; display: grid; place-items: center; margin-bottom: 22px; border-radius: 16px; background: linear-gradient(145deg, #eceaff, #e7f3ff); color: #554ce0; font-size: 24px; }
+    .feature-card h3 { margin: 0 0 10px; font-size: 20px; }
+    .feature-card p { margin: 0; color: var(--muted); line-height: 1.75; font-size: 14px; }
+
+    .showcase { background: #fff; }
+    .showcase-row { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 84px; margin-top: 100px; }
+    .showcase-row:first-of-type { margin-top: 60px; }
+    .showcase-row.reverse { grid-template-columns: 1.1fr .9fr; }
+    .showcase-row.reverse .showcase-copy { order: 2; }
+    .showcase-media { position: relative; min-height: 670px; display: grid; place-items: center; overflow: hidden; border-radius: 36px; background: linear-gradient(145deg, #f0efff, #e9f3ff); }
+    .showcase-media::before { content: ""; position: absolute; width: 440px; height: 440px; border-radius: 50%; background: rgba(100,89,239,.13); filter: blur(8px); }
+    .showcase-media img { position: relative; width: min(370px, 75%); border-radius: 34px; box-shadow: var(--shadow); }
+    .showcase-copy h3 { margin: 15px 0 18px; font-size: clamp(34px, 4vw, 54px); line-height: 1.18; letter-spacing: -.03em; }
+    .showcase-copy p { margin: 0 0 24px; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .ticks { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
+    .ticks li { display: flex; align-items: center; gap: 11px; color: #3d3c52; font-size: 15px; }
+    .ticks li::before { content: "✓"; width: 23px; height: 23px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: #eceaff; color: #564de0; font-weight: 900; }
+
+    .gallery-section { overflow: hidden; background: #17162b; color: #fff; }
+    .gallery-section .section-lead { color: rgba(255,255,255,.62); }
+    .gallery-track { display: flex; gap: 20px; margin-top: 50px; overflow-x: auto; padding: 10px max(20px, calc((100vw - 1160px) / 2)) 35px; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #6158d7 transparent; }
+    .gallery-track img { width: 284px; flex: 0 0 auto; border-radius: 28px; scroll-snap-align: center; box-shadow: 0 26px 55px rgba(0,0,0,.28); }
+
+    .download-section { position: relative; overflow: hidden; padding: 115px 0; background: linear-gradient(145deg, #5448d3, #2f67d6); color: #fff; }
+    .download-section::before { content: ""; position: absolute; inset: -40%; background: radial-gradient(circle at center, rgba(255,255,255,.16), transparent 36%); }
+    .download-card { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 48px; padding: 55px; border: 1px solid rgba(255,255,255,.2); border-radius: 34px; background: rgba(25,23,82,.24); backdrop-filter: blur(18px); }
+    .download-card h2 { margin: 0 0 14px; font-size: clamp(36px, 5vw, 58px); }
+    .download-card p { max-width: 700px; margin: 0; color: rgba(255,255,255,.72); line-height: 1.8; }
+    .download-card .button { min-height: 58px; background: #fff; color: #443ab8; box-shadow: 0 18px 40px rgba(20,16,78,.28); }
+    .hash { margin-top: 18px; color: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
+
+    .faq { background: #fff; }
+    .faq-list { display: grid; gap: 12px; max-width: 900px; margin-top: 46px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    summary { cursor: pointer; padding: 22px 24px; font-weight: 760; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; float: right; color: var(--violet); font-size: 22px; line-height: 1; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: -4px 24px 24px; color: var(--muted); line-height: 1.8; }
+
+    footer { padding: 34px 0; background: #111022; color: rgba(255,255,255,.58); font-size: 13px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a:hover { color: #fff; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 960px) {
+      .nav-links a:not(.nav-download) { display: none; }
+      .hero-grid { grid-template-columns: 1fr; padding-top: 70px; text-align: center; }
+      .hero-copy { margin-left: auto; margin-right: auto; }
+      .hero-actions, .hero-meta { justify-content: center; }
+      .hero-visual { width: min(620px, 100%); margin: -15px auto 0; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 42px; margin-top: 80px; }
+      .showcase-row.reverse .showcase-copy { order: 0; }
+      .download-card { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 28px, 1160px); }
+      .site-header .nav { min-height: 62px; }
+      .brand { font-size: 16px; }
+      .brand img { width: 34px; height: 34px; }
+      .nav-download { padding: 0 13px; }
+      .hero { min-height: auto; }
+      .hero-grid { gap: 36px; padding: 55px 0 50px; }
+      .hero h1 { font-size: 48px; }
+      .hero-copy { font-size: 17px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .hero-visual { height: 515px; }
+      .phone-shot.front { width: 280px; right: 6px; }
+      .phone-shot.back { width: 230px; left: 2px; bottom: -20px; }
+      .float-chip { min-width: 150px; padding: 11px 13px; font-size: 13px; }
+      .float-chip.one { left: -6px; top: 115px; }
+      .float-chip.two { right: -5px; bottom: 50px; }
+      .section { padding: 78px 0; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .showcase-media { min-height: 570px; }
+      .gallery-track img { width: 244px; }
+      .download-card { padding: 34px 25px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "紫霞浏览器",
+    "operatingSystem": "Android 4.2+",
+    "applicationCategory": "BrowserApplication",
+    "softwareVersion": "2.9",
+    "downloadUrl": "https://www.52zixia.com/zixia-browser-release.apk",
+    "image": "https://www.52zixia.com/assets/icon.png",
+    "description": "集 AI 助手、广告拦截、脚本扩展、网页视频倍速、阅读与听书于一体的 Android 浏览器。"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="紫霞浏览器首页">
+        <img src="../assets/icon.svg" alt="紫霞浏览器图标">
+        <span>紫霞浏览器</span>
+      </a>
+      <nav class="nav-links" aria-label="主要导航">
+        <a href="#features">产品特性</a>
+        <a href="#screens">功能截图</a>
+        <a href="#faq">安装帮助</a>
+        <a class="button nav-download" href="../zixia-browser-release.apk" download>下载 Android APK</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Android · 紫霞浏览器 2.9</div>
+          <h1>浏览更自由，<br><span>内容更好懂。</span></h1>
+          <p class="hero-copy">把网页浏览、AI 理解、脚本扩展、视频倍速、沉浸阅读与听书放进一个清爽的 Android 浏览器。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="../zixia-browser-release.apk" download>
+              <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
+              下载 Android APK
+            </a>
+            <a class="button button-ghost" href="#features">了解产品特性</a>
+          </div>
+          <div class="hero-meta">
+            <span><i class="check">✓</i>Android 4.2 及以上</span>
+            <span><i class="check">✓</i>APK 约 22.1 MB</span>
+            <span><i class="check">✓</i>无需应用商店</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="紫霞浏览器界面预览">
+          <img class="phone-shot back" src="../assets/screens/4.jpg" alt="紫霞浏览器 AI 助手界面">
+          <img class="phone-shot front" src="../assets/screens/1.jpg" alt="紫霞浏览器首页">
+          <div class="float-chip one"><span class="chip-icon">AI</span><span>网页 AI 助手<small>总结 · 鉴真 · 改写</small></span></div>
+          <div class="float-chip two"><span class="chip-icon">2×</span><span>视频倍速<small>0.10× 至 50×</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="section-kicker">Product features</div>
+          <h2 class="section-title">一个浏览器，承接更多使用场景</h2>
+          <p class="section-lead">参考极简浏览器的清晰节奏，又加入更适合中文网页、长文阅读和内容理解的实用能力。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><div class="feature-card-icon">✦</div><h3>AI 理解网页</h3><p>对当前页面进行总结、鉴真与改写，让长内容更快变成可用信息。</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">◉</div><h3>广告拦截</h3><p>支持内置规则、自定义规则与订阅管理，减少网页广告和跟踪请求。</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">JS</div><h3>脚本扩展</h3><p>按网站或域名启用脚本，扩展去广告、原图查看与阅读增强能力。</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">Aa</div><h3>阅读与听书</h3><p>自由调整字号、行距、背景与翻页方式，也可以让浏览器为你朗读。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase">
+      <div class="wrap">
+        <div class="showcase-row reveal">
+          <div class="showcase-copy">
+            <div class="section-kicker">AI Assistant</div>
+            <h3>让网页，拥有 AI 助手</h3>
+            <p>无需来回复制网页内容。紫霞可以将当前页面作为上下文，帮助你快速提炼重点、判断信息并改写文本。</p>
+            <ul class="ticks"><li>一键总结当前网页</li><li>辅助鉴别内容与观点</li><li>根据需要改写表达</li></ul>
+          </div>
+          <div class="showcase-media"><img src="../assets/screens/4.jpg" loading="lazy" alt="紫霞浏览器 AI 助手宣传截图"></div>
+        </div>
+
+        <div class="showcase-row reverse reveal">
+          <div class="showcase-copy">
+            <div class="section-kicker">Clean & Extensible</div>
+            <h3>拦住干扰，也保留扩展自由</h3>
+            <p>广告拦截与脚本管理各司其职。你可以启用内置规则，也可以添加自己的过滤和网页增强方案。</p>
+            <ul class="ticks"><li>内置与订阅过滤规则</li><li>自定义域名和网页元素规则</li><li>脚本按域名独立启停</li></ul>
+          </div>
+          <div class="showcase-media"><img src="../assets/screens/6.jpg" loading="lazy" alt="紫霞浏览器广告拦截宣传截图"></div>
+        </div>
+
+        <div class="showcase-row reveal">
+          <div class="showcase-copy">
+            <div class="section-kicker">Video Speed</div>
+            <h3>网页视频，速度由你掌控</h3>
+            <p>从慢速观察到快速浏览，网页视频支持 0.10× 至 50× 的灵活调节，常用倍速可以一步选择。</p>
+            <ul class="ticks"><li>视频页面内直接调节</li><li>预设倍速与滑杆微调</li><li>适合课程、演示与长视频</li></ul>
+          </div>
+          <div class="showcase-media"><img src="../assets/screens/7.jpg" loading="lazy" alt="紫霞浏览器视频倍速宣传截图"></div>
+        </div>
+
+        <div class="showcase-row reverse reveal">
+          <div class="showcase-copy">
+            <div class="section-kicker">Reading</div>
+            <h3>把长文，读成自己的样子</h3>
+            <p>字体、行距、页边距、底色与翻页方式都可以细调。读累了，再切换朗读，让故事继续。</p>
+            <ul class="ticks"><li>多种阅读底色与排版参数</li><li>书架收藏与章节导航</li><li>朗读、定时与语速控制</li></ul>
+          </div>
+          <div class="showcase-media"><img src="../assets/screens/9.jpg" loading="lazy" alt="紫霞浏览器阅读模式宣传截图"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="screens">
+      <div class="wrap reveal">
+        <div class="section-kicker">Screenshots</div>
+        <h2 class="section-title">从首页到阅读，功能一目了然</h2>
+        <p class="section-lead">横向滑动查看紫霞浏览器的完整功能截图。</p>
+      </div>
+      <div class="gallery-track" aria-label="紫霞浏览器功能截图列表">
+        <img src="../assets/screens/1.jpg" loading="lazy" alt="紫霞浏览器首页">
+        <img src="../assets/screens/2.jpg" loading="lazy" alt="紫霞浏览器工具箱">
+        <img src="../assets/screens/4.jpg" loading="lazy" alt="紫霞浏览器 AI 助手">
+        <img src="../assets/screens/6.jpg" loading="lazy" alt="紫霞浏览器广告拦截">
+        <img src="../assets/screens/7.jpg" loading="lazy" alt="紫霞浏览器网页视频倍速">
+        <img src="../assets/screens/5.jpg" loading="lazy" alt="紫霞浏览器脚本管理">
+        <img src="../assets/screens/8.jpg" loading="lazy" alt="紫霞浏览器全屏浏览">
+        <img src="../assets/screens/9.jpg" loading="lazy" alt="紫霞浏览器阅读模式">
+        <img src="../assets/screens/10.jpg" loading="lazy" alt="紫霞浏览器阅读设置">
+        <img src="../assets/screens/11.jpg" loading="lazy" alt="紫霞浏览器听书功能">
+      </div>
+    </section>
+
+    <section class="download-section" id="download">
+      <div class="wrap">
+        <div class="download-card reveal">
+          <div>
+            <h2>现在，下载紫霞浏览器</h2>
+            <p>目前仅提供 Android APK 安装包，可直接下载并安装。下载后请按系统提示允许浏览器安装应用。</p>
+            <div class="hash">SHA-256: C40E958D069C903D0DF0459B1D74908126363E8E15FA5ACC8CF15724FF84403E</div>
+          </div>
+          <a class="button" href="../zixia-browser-release.apk" download>
+            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
+            下载 APK
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="wrap">
+        <div class="section-kicker">Installation</div>
+        <h2 class="section-title">安装常见问题</h2>
+        <div class="faq-list">
+          <details><summary>紫霞浏览器支持哪些设备？</summary><p>当前提供 Android 版本，最低支持 Android 4.2（API 17）。不同设备的系统 WebView 版本可能影响部分网页特性。</p></details>
+          <details><summary>为什么安装时会出现安全提示？</summary><p>因为安装包由网页直接下载，而不是通过应用商店分发。请在系统设置中临时允许当前浏览器“安装未知应用”，安装完成后可以关闭该权限。</p></details>
+          <details><summary>如何确认下载文件完整？</summary><p>当前 APK 的 SHA-256 为 C40E958D069C903D0DF0459B1D74908126363E8E15FA5ACC8CF15724FF84403E，可使用系统或第三方校验工具核对。</p></details>
+          <details><summary>隐私政策和用户协议在哪里查看？</summary><p>可以访问本站的<a href="./privacy/" style="color:#564de0;font-weight:700">《紫霞浏览器隐私政策》</a>和<a href="./terms/" style="color:#564de0;font-weight:700">《紫霞浏览器用户协议》</a>。</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year"></span> 紫霞浏览器</span>
+      <div class="footer-links"><a href="./privacy/">隐私政策</a><a href="./terms/">用户协议</a><a href="#top">返回顶部</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || !('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+  </script>
+</body>
+</html>

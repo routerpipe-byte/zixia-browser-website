@@ -1,37 +1,36 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5f55e8">
-  <meta name="description" content="紫霞浏览器是一款面向 Android 的多功能浏览器，集 AI 助手、广告拦截、脚本扩展、网页视频倍速、沉浸阅读与听书于一体。">
+  <meta name="description" content="Zixia Browser is an Android browser with AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools.">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="紫霞浏览器｜浏览、阅读与 AI，一处完成">
-  <meta property="og:description" content="清爽浏览、AI 理解、脚本扩展、视频倍速、阅读与听书。仅提供 Android APK 下载。">
-  <meta property="og:image" content="https://www.52zixia.com/assets/screens/1.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Zixia Browser | Browse, read, and understand more">
+  <meta property="og:description" content="Clean browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud. Android APK only.">
+  <meta property="og:image" content="https://www.52zixia.com/assets/screens-en/1.jpg">
   <meta property="og:url" content="https://www.52zixia.com/">
   <link rel="canonical" href="https://www.52zixia.com/">
-  <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/">
-  <link rel="alternate" hreflang="en" href="https://www.52zixia.com/en/">
-  <title>紫霞浏览器｜Android 浏览器</title>
+  <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/zh-cn/">
+  <link rel="alternate" hreflang="en" href="https://www.52zixia.com/">
+  <link rel="alternate" hreflang="x-default" href="https://www.52zixia.com/">
+  <title>Zixia Browser | Android Browser</title>
   <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/icon.png">
   <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
   <link rel="apple-touch-icon" href="./assets/icon.png">
   <script>
     (() => {
-      const params = new URLSearchParams(window.location.search);
-      const requested = params.get('lang');
-      let saved = null;
-      try {
-        if (requested === 'zh' || requested === 'en') localStorage.setItem('zixia-language', requested);
-        saved = localStorage.getItem('zixia-language');
-      } catch (_) {}
-      const languages = navigator.languages?.length ? navigator.languages : [navigator.language || ''];
-      const isChinese = languages.some(language => /^zh(?:-|$)/i.test(language));
-      if (requested === 'en' || (!requested && (saved === 'en' || (!saved && !isChinese)))) {
-        window.location.replace('./en/');
+      const requested = new URLSearchParams(window.location.search).get('lang');
+      if (requested === 'zh') {
+        window.location.replace('./zh-cn/');
+        return;
+      }
+      if (requested === 'en') return;
+      const preferredLanguage = navigator.language || navigator.languages?.[0] || '';
+      if (/^zh(?:-|$)/i.test(preferredLanguage)) {
+        window.location.replace('./zh-cn/');
       }
     })();
   </script>
@@ -83,7 +82,6 @@
     .brand img { width: 38px; height: 38px; border-radius: 12px; box-shadow: 0 8px 24px rgba(13, 9, 65, .28); }
     .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; color: rgba(255,255,255,.8); }
     .nav-links a:hover { color: #fff; }
-    .language-link { min-width: 38px; height: 38px; display: inline-grid; place-items: center; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; color: #fff; font-weight: 800; }
 
     .button {
       display: inline-flex;
@@ -231,7 +229,7 @@
     .reveal.visible { opacity: 1; transform: none; }
 
     @media (max-width: 960px) {
-      .nav-links a:not(.nav-download):not(.language-link) { display: none; }
+      .nav-links a:not(.nav-download) { display: none; }
       .hero-grid { grid-template-columns: 1fr; padding-top: 70px; text-align: center; }
       .hero-copy { margin-left: auto; margin-right: auto; }
       .hero-actions, .hero-meta { justify-content: center; }
@@ -278,29 +276,28 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "紫霞浏览器",
+    "name": "Zixia Browser",
     "operatingSystem": "Android 4.2+",
     "applicationCategory": "BrowserApplication",
     "softwareVersion": "2.9",
     "downloadUrl": "https://www.52zixia.com/zixia-browser-release.apk",
     "image": "https://www.52zixia.com/assets/icon.png",
-    "description": "集 AI 助手、广告拦截、脚本扩展、网页视频倍速、阅读与听书于一体的 Android 浏览器。"
+    "description": "An Android browser with AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools."
   }
   </script>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="紫霞浏览器首页">
-        <img src="./assets/icon.svg" alt="紫霞浏览器图标">
-        <span>紫霞浏览器</span>
+      <a class="brand" href="#top" aria-label="Zixia Browser home">
+        <img src="./assets/icon.svg" alt="Zixia Browser icon">
+        <span>Zixia Browser</span>
       </a>
-      <nav class="nav-links" aria-label="主要导航">
-        <a href="#features">产品特性</a>
-        <a href="#screens">功能截图</a>
-        <a href="#faq">安装帮助</a>
-        <a class="language-link" href="./en/?lang=en" lang="en" hreflang="en" aria-label="English version">EN</a>
-        <a class="button nav-download" href="./zixia-browser-release.apk" download>下载 Android APK</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#screens">Screenshots</a>
+        <a href="#faq">Install help</a>
+        <a class="button nav-download" href="./zixia-browser-release.apk" download>Download Android APK</a>
       </nav>
     </div>
   </header>
@@ -309,28 +306,28 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-content">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>Android · 紫霞浏览器 2.9</div>
-          <h1>浏览更自由，<br><span>内容更好懂。</span></h1>
-          <p class="hero-copy">把网页浏览、AI 理解、脚本扩展、视频倍速、沉浸阅读与听书放进一个清爽的 Android 浏览器。</p>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Android · Zixia Browser 2.9</div>
+          <h1>Browse freely.<br><span>Understand more.</span></h1>
+          <p class="hero-copy">Clean web browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud—all in one Android browser.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="./zixia-browser-release.apk" download>
               <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
-              下载 Android APK
+              Download Android APK
             </a>
-            <a class="button button-ghost" href="#features">了解产品特性</a>
+            <a class="button button-ghost" href="#features">Explore features</a>
           </div>
           <div class="hero-meta">
-            <span><i class="check">✓</i>Android 4.2 及以上</span>
-            <span><i class="check">✓</i>APK 约 21.7 MB</span>
-            <span><i class="check">✓</i>无需应用商店</span>
+            <span><i class="check">✓</i>Android 4.2 or later</span>
+            <span><i class="check">✓</i>APK about 22.1 MB</span>
+            <span><i class="check">✓</i>No app store required</span>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="紫霞浏览器界面预览">
-          <img class="phone-shot back" src="./assets/screens/4.jpg" alt="紫霞浏览器 AI 助手界面">
-          <img class="phone-shot front" src="./assets/screens/1.jpg" alt="紫霞浏览器首页">
-          <div class="float-chip one"><span class="chip-icon">AI</span><span>网页 AI 助手<small>总结 · 鉴真 · 改写</small></span></div>
-          <div class="float-chip two"><span class="chip-icon">2×</span><span>视频倍速<small>0.10× 至 50×</small></span></div>
+        <div class="hero-visual" aria-label="Zixia Browser interface preview">
+          <img class="phone-shot back" src="./assets/screens-en/7.jpg" alt="Zixia Browser AI assistant">
+          <img class="phone-shot front" src="./assets/screens-en/1.jpg" alt="Zixia Browser home screen">
+          <div class="float-chip one"><span class="chip-icon">AI</span><span>Page-aware AI<small>Summarize · Verify · Transform</small></span></div>
+          <div class="float-chip two"><span class="chip-icon">2×</span><span>Video speed<small>0.10× to 50×</small></span></div>
         </div>
       </div>
     </section>
@@ -339,14 +336,14 @@
       <div class="wrap">
         <div class="reveal">
           <div class="section-kicker">Product features</div>
-          <h2 class="section-title">一个浏览器，承接更多使用场景</h2>
-          <p class="section-lead">参考极简浏览器的清晰节奏，又加入更适合中文网页、长文阅读和内容理解的实用能力。</p>
+          <h2 class="section-title">One browser for more of what you do</h2>
+          <p class="section-lead">A focused browser experience with practical tools for understanding pages, extending the web, and settling into long-form reading.</p>
         </div>
         <div class="feature-grid">
-          <article class="feature-card reveal"><div class="feature-card-icon">✦</div><h3>AI 理解网页</h3><p>对当前页面进行总结、鉴真与改写，让长内容更快变成可用信息。</p></article>
-          <article class="feature-card reveal"><div class="feature-card-icon">◉</div><h3>广告拦截</h3><p>支持内置规则、自定义规则与订阅管理，减少网页广告和跟踪请求。</p></article>
-          <article class="feature-card reveal"><div class="feature-card-icon">JS</div><h3>脚本扩展</h3><p>按网站或域名启用脚本，扩展去广告、原图查看与阅读增强能力。</p></article>
-          <article class="feature-card reveal"><div class="feature-card-icon">Aa</div><h3>阅读与听书</h3><p>自由调整字号、行距、背景与翻页方式，也可以让浏览器为你朗读。</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">✦</div><h3>Understand pages with AI</h3><p>Summarize, verify, or transform the current page and turn long content into useful information faster.</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">◉</div><h3>Block ads and trackers</h3><p>Use built-in filters, custom rules, and subscription lists to reduce distracting ads and tracking requests.</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">JS</div><h3>Extend the web with scripts</h3><p>Enable scripts by site or domain for cleaner pages, original-image viewing, and improved reading.</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">Aa</div><h3>Read and listen your way</h3><p>Fine-tune type, spacing, colors, and page turns—or let Zixia read the page aloud.</p></article>
         </div>
       </div>
     </section>
@@ -356,41 +353,41 @@
         <div class="showcase-row reveal">
           <div class="showcase-copy">
             <div class="section-kicker">AI Assistant</div>
-            <h3>让网页，拥有 AI 助手</h3>
-            <p>无需来回复制网页内容。紫霞可以将当前页面作为上下文，帮助你快速提炼重点、判断信息并改写文本。</p>
-            <ul class="ticks"><li>一键总结当前网页</li><li>辅助鉴别内容与观点</li><li>根据需要改写表达</li></ul>
+            <h3>Give every page an AI assistant</h3>
+            <p>No more copying page content back and forth. Zixia can send the current page as context to your selected AI provider, helping you extract key points, check claims, and reshape text.</p>
+            <ul class="ticks"><li>Summarize the current page</li><li>Review information and viewpoints</li><li>Transform text for your needs</li></ul>
           </div>
-          <div class="showcase-media"><img src="./assets/screens/4.jpg" loading="lazy" alt="紫霞浏览器 AI 助手宣传截图"></div>
+          <div class="showcase-media"><img src="./assets/screens-en/7.jpg" loading="lazy" alt="Zixia Browser AI assistant"></div>
         </div>
 
         <div class="showcase-row reverse reveal">
           <div class="showcase-copy">
             <div class="section-kicker">Clean & Extensible</div>
-            <h3>拦住干扰，也保留扩展自由</h3>
-            <p>广告拦截与脚本管理各司其职。你可以启用内置规则，也可以添加自己的过滤和网页增强方案。</p>
-            <ul class="ticks"><li>内置与订阅过滤规则</li><li>自定义域名和网页元素规则</li><li>脚本按域名独立启停</li></ul>
+            <h3>Block distractions. Keep control.</h3>
+            <p>Ad blocking and script management work side by side. Start with built-in rules, add subscriptions, or create your own filters and page enhancements.</p>
+            <ul class="ticks"><li>Built-in and subscribed filter lists</li><li>Custom domain and element rules</li><li>Per-site script controls</li></ul>
           </div>
-          <div class="showcase-media"><img src="./assets/screens/6.jpg" loading="lazy" alt="紫霞浏览器广告拦截宣传截图"></div>
+          <div class="showcase-media"><img src="./assets/screens-en/5.jpg" loading="lazy" alt="Zixia Browser ad blocking settings"></div>
         </div>
 
         <div class="showcase-row reveal">
           <div class="showcase-copy">
             <div class="section-kicker">Video Speed</div>
-            <h3>网页视频，速度由你掌控</h3>
-            <p>从慢速观察到快速浏览，网页视频支持 0.10× 至 50× 的灵活调节，常用倍速可以一步选择。</p>
-            <ul class="ticks"><li>视频页面内直接调节</li><li>预设倍速与滑杆微调</li><li>适合课程、演示与长视频</li></ul>
+            <h3>Control the pace of web video</h3>
+            <p>Slow down to inspect a moment or speed through long material. Adjust compatible web videos from 0.10× to 50× with presets and fine control.</p>
+            <ul class="ticks"><li>Adjust speed without leaving the page</li><li>Quick presets plus slider control</li><li>Useful for courses, demos, and long videos</li></ul>
           </div>
-          <div class="showcase-media"><img src="./assets/screens/7.jpg" loading="lazy" alt="紫霞浏览器视频倍速宣传截图"></div>
+          <div class="showcase-media"><img src="./assets/screens-en/4.jpg" loading="lazy" alt="Zixia Browser video acceleration settings"></div>
         </div>
 
         <div class="showcase-row reverse reveal">
           <div class="showcase-copy">
             <div class="section-kicker">Reading</div>
-            <h3>把长文，读成自己的样子</h3>
-            <p>字体、行距、页边距、底色与翻页方式都可以细调。读累了，再切换朗读，让故事继续。</p>
-            <ul class="ticks"><li>多种阅读底色与排版参数</li><li>书架收藏与章节导航</li><li>朗读、定时与语速控制</li></ul>
+            <h3>Make long-form reading your own</h3>
+            <p>Fine-tune fonts, spacing, margins, background colors, and page-turning behavior. When your eyes need a break, switch to read aloud and keep the story moving.</p>
+            <ul class="ticks"><li>Flexible colors and typography</li><li>Bookshelf and chapter navigation</li><li>Read aloud, timer, and speed controls</li></ul>
           </div>
-          <div class="showcase-media"><img src="./assets/screens/9.jpg" loading="lazy" alt="紫霞浏览器阅读模式宣传截图"></div>
+          <div class="showcase-media"><img src="./assets/screens-en/8.jpg" loading="lazy" alt="Zixia Browser immersive reader"></div>
         </div>
       </div>
     </section>
@@ -398,20 +395,21 @@
     <section class="section gallery-section" id="screens">
       <div class="wrap reveal">
         <div class="section-kicker">Screenshots</div>
-        <h2 class="section-title">从首页到阅读，功能一目了然</h2>
-        <p class="section-lead">横向滑动查看紫霞浏览器的完整功能截图。</p>
+        <h2 class="section-title">From the home screen to immersive reading</h2>
+        <p class="section-lead">Swipe through real English interface screenshots from Zixia Browser.</p>
       </div>
-      <div class="gallery-track" aria-label="紫霞浏览器功能截图列表">
-        <img src="./assets/screens/1.jpg" loading="lazy" alt="紫霞浏览器首页">
-        <img src="./assets/screens/2.jpg" loading="lazy" alt="紫霞浏览器工具箱">
-        <img src="./assets/screens/4.jpg" loading="lazy" alt="紫霞浏览器 AI 助手">
-        <img src="./assets/screens/6.jpg" loading="lazy" alt="紫霞浏览器广告拦截">
-        <img src="./assets/screens/7.jpg" loading="lazy" alt="紫霞浏览器网页视频倍速">
-        <img src="./assets/screens/5.jpg" loading="lazy" alt="紫霞浏览器脚本管理">
-        <img src="./assets/screens/8.jpg" loading="lazy" alt="紫霞浏览器全屏浏览">
-        <img src="./assets/screens/9.jpg" loading="lazy" alt="紫霞浏览器阅读模式">
-        <img src="./assets/screens/10.jpg" loading="lazy" alt="紫霞浏览器阅读设置">
-        <img src="./assets/screens/11.jpg" loading="lazy" alt="紫霞浏览器听书功能">
+      <div class="gallery-track" aria-label="Zixia Browser feature screenshots">
+        <img src="./assets/screens-en/1.jpg" loading="lazy" alt="Zixia Browser home screen">
+        <img src="./assets/screens-en/2.jpg" loading="lazy" alt="Zixia Browser quick tools">
+        <img src="./assets/screens-en/3.jpg" loading="lazy" alt="Zixia Browser settings panel">
+        <img src="./assets/screens-en/4.jpg" loading="lazy" alt="Video acceleration settings">
+        <img src="./assets/screens-en/5.jpg" loading="lazy" alt="Ad blocking settings">
+        <img src="./assets/screens-en/6.jpg" loading="lazy" alt="Script manager">
+        <img src="./assets/screens-en/7.jpg" loading="lazy" alt="AI assistant">
+        <img src="./assets/screens-en/8.jpg" loading="lazy" alt="Immersive reader">
+        <img src="./assets/screens-en/9.jpg" loading="lazy" alt="Read-aloud player">
+        <img src="./assets/screens-en/10.jpg" loading="lazy" alt="Reader appearance controls">
+        <img src="./assets/screens-en/11.jpg" loading="lazy" alt="Fullscreen controls">
       </div>
     </section>
 
@@ -419,13 +417,13 @@
       <div class="wrap">
         <div class="download-card reveal">
           <div>
-            <h2>现在，下载紫霞浏览器</h2>
-            <p>目前仅提供 Android APK 安装包，可直接下载并安装。下载后请按系统提示允许浏览器安装应用。</p>
-            <div class="hash">SHA-256: 8D88CA7B07DBBE55953C137F5B16ED8217DE62F5CC5A5170B0887ED681083424</div>
+            <h2>Download Zixia Browser</h2>
+            <p>Zixia is currently available as a direct Android APK download. After downloading, follow your device prompts to allow installation from your browser.</p>
+            <div class="hash">SHA-256: C40E958D069C903D0DF0459B1D74908126363E8E15FA5ACC8CF15724FF84403E</div>
           </div>
           <a class="button" href="./zixia-browser-release.apk" download>
             <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
-            下载 APK
+            Download APK
           </a>
         </div>
       </div>
@@ -434,12 +432,12 @@
     <section class="section faq" id="faq">
       <div class="wrap">
         <div class="section-kicker">Installation</div>
-        <h2 class="section-title">安装常见问题</h2>
+        <h2 class="section-title">Installation FAQ</h2>
         <div class="faq-list">
-          <details><summary>紫霞浏览器支持哪些设备？</summary><p>当前提供 Android 版本，最低支持 Android 4.2（API 17）。不同设备的系统 WebView 版本可能影响部分网页特性。</p></details>
-          <details><summary>为什么安装时会出现安全提示？</summary><p>因为安装包由网页直接下载，而不是通过应用商店分发。请在系统设置中临时允许当前浏览器“安装未知应用”，安装完成后可以关闭该权限。</p></details>
-          <details><summary>如何确认下载文件完整？</summary><p>当前 APK 的 SHA-256 为 8D88CA7B07DBBE55953C137F5B16ED8217DE62F5CC5A5170B0887ED681083424，可使用系统或第三方校验工具核对。</p></details>
-          <details><summary>隐私政策和用户协议在哪里查看？</summary><p>可以访问本站的<a href="./privacy/" style="color:#564de0;font-weight:700">《紫霞浏览器隐私政策》</a>和<a href="./terms/" style="color:#564de0;font-weight:700">《紫霞浏览器用户协议》</a>。</p></details>
+          <details><summary>Which devices are supported?</summary><p>Zixia currently supports Android 4.2 (API 17) and later. Some web features may vary depending on the system WebView available on your device.</p></details>
+          <details><summary>Why does Android show an installation warning?</summary><p>The APK is downloaded directly from this website rather than an app store. Temporarily allow your browser to install unknown apps in Android settings; you can turn that permission off after installation.</p></details>
+          <details><summary>How can I verify the APK?</summary><p>The current APK SHA-256 is C40E958D069C903D0DF0459B1D74908126363E8E15FA5ACC8CF15724FF84403E. Compare it with a system or third-party checksum tool.</p></details>
+          <details><summary>Where are the Privacy Policy and Terms of Use?</summary><p>Read the <a href="./privacy/" style="color:#564de0;font-weight:700">Zixia Browser Privacy Policy</a> and <a href="./terms/" style="color:#564de0;font-weight:700">Terms of Use</a>.</p></details>
         </div>
       </div>
     </section>
@@ -447,8 +445,8 @@
 
   <footer>
     <div class="wrap footer-row">
-      <span>© <span id="year"></span> 紫霞浏览器</span>
-      <div class="footer-links"><a href="./privacy/">隐私政策</a><a href="./terms/">用户协议</a><a href="#top">返回顶部</a></div>
+      <span>© <span id="year"></span> Zixia Browser</span>
+      <div class="footer-links"><a href="./privacy/">Privacy Policy</a><a href="./terms/">Terms of Use</a><a href="#top">Back to top</a></div>
     </div>
   </footer>
 
