@@ -12,8 +12,12 @@
   <meta property="og:image" content="https://www.52zixia.com/assets/screens/1.jpg">
   <meta property="og:url" content="https://www.52zixia.com/">
   <link rel="canonical" href="https://www.52zixia.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/">
+  <link rel="alternate" hreflang="en" href="https://www.52zixia.com/en/">
   <title>紫霞浏览器｜Android 浏览器</title>
-  <link rel="icon" href="./assets/icon.png">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="./assets/icon.png">
+  <link rel="apple-touch-icon" href="./assets/icon.png">
   <style>
     :root {
       --ink: #17172a;
@@ -62,6 +66,7 @@
     .brand img { width: 38px; height: 38px; border-radius: 12px; box-shadow: 0 8px 24px rgba(13, 9, 65, .28); }
     .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; color: rgba(255,255,255,.8); }
     .nav-links a:hover { color: #fff; }
+    .language-link { min-width: 38px; height: 38px; display: inline-grid; place-items: center; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; color: #fff; font-weight: 800; }
 
     .button {
       display: inline-flex;
@@ -209,7 +214,7 @@
     .reveal.visible { opacity: 1; transform: none; }
 
     @media (max-width: 960px) {
-      .nav-links a:not(.nav-download) { display: none; }
+      .nav-links a:not(.nav-download):not(.language-link) { display: none; }
       .hero-grid { grid-template-columns: 1fr; padding-top: 70px; text-align: center; }
       .hero-copy { margin-left: auto; margin-right: auto; }
       .hero-actions, .hero-meta { justify-content: center; }
@@ -277,6 +282,7 @@
         <a href="#features">产品特性</a>
         <a href="#screens">功能截图</a>
         <a href="#faq">安装帮助</a>
+        <a class="language-link" href="./en/" lang="en" hreflang="en" aria-label="English version">EN</a>
         <a class="button nav-download" href="./zixia-browser-release.apk" download>下载 Android APK</a>
       </nav>
     </div>
