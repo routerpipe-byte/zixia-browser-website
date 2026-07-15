@@ -17,7 +17,24 @@
   <title>紫霞浏览器｜Android 浏览器</title>
   <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/icon.png">
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
   <link rel="apple-touch-icon" href="./assets/icon.png">
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const requested = params.get('lang');
+      let saved = null;
+      try {
+        if (requested === 'zh' || requested === 'en') localStorage.setItem('zixia-language', requested);
+        saved = localStorage.getItem('zixia-language');
+      } catch (_) {}
+      const languages = navigator.languages?.length ? navigator.languages : [navigator.language || ''];
+      const isChinese = languages.some(language => /^zh(?:-|$)/i.test(language));
+      if (requested === 'en' || (!requested && (saved === 'en' || (!saved && !isChinese)))) {
+        window.location.replace('./en/');
+      }
+    })();
+  </script>
   <style>
     :root {
       --ink: #17172a;
@@ -275,14 +292,14 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="紫霞浏览器首页">
-        <img src="./assets/icon.png" alt="紫霞浏览器图标">
+        <img src="./assets/icon.svg" alt="紫霞浏览器图标">
         <span>紫霞浏览器</span>
       </a>
       <nav class="nav-links" aria-label="主要导航">
         <a href="#features">产品特性</a>
         <a href="#screens">功能截图</a>
         <a href="#faq">安装帮助</a>
-        <a class="language-link" href="./en/" lang="en" hreflang="en" aria-label="English version">EN</a>
+        <a class="language-link" href="./en/?lang=en" lang="en" hreflang="en" aria-label="English version">EN</a>
         <a class="button nav-download" href="./zixia-browser-release.apk" download>下载 Android APK</a>
       </nav>
     </div>
