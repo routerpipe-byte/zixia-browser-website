@@ -17,7 +17,15 @@
   <title>Zixia Browser | Android Browser</title>
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="apple-touch-icon" href="../assets/icon.png">
+  <script>
+    try {
+      if (new URLSearchParams(window.location.search).get('lang') === 'en') {
+        localStorage.setItem('zixia-language', 'en');
+      }
+    } catch (_) {}
+  </script>
   <style>
     :root {
       --ink: #17172a;
@@ -275,14 +283,14 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Zixia Browser home">
-        <img src="../assets/icon.png" alt="Zixia Browser icon">
+        <img src="../assets/icon.svg" alt="Zixia Browser icon">
         <span>Zixia Browser</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#features">Features</a>
         <a href="#screens">Screenshots</a>
         <a href="#faq">Install help</a>
-        <a class="language-link" href="../" lang="zh-CN" hreflang="zh-CN" aria-label="中文版">中文</a>
+        <a class="language-link" href="../?lang=zh" lang="zh-CN" hreflang="zh-CN" aria-label="中文版">中文</a>
         <a class="button nav-download" href="../zixia-browser-release.apk" download>Download Android APK</a>
       </nav>
     </div>
