@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Zixia Browser | Browse, read, and understand more">
-  <meta property="og:description" content="Clean browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud. Android APK only.">
+  <meta property="og:description" content="Clean browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud. Available on Google Play or as a direct Android APK.">
   <meta property="og:image" content="https://www.52zixia.com/assets/screens-en/1.jpg">
   <meta property="og:url" content="https://www.52zixia.com/">
   <link rel="canonical" href="https://www.52zixia.com/">
@@ -209,6 +209,8 @@
     .download-card h2 { margin: 0 0 14px; font-size: clamp(36px, 5vw, 58px); }
     .download-card p { max-width: 700px; margin: 0; color: rgba(255,255,255,.72); line-height: 1.8; }
     .download-card .button { min-height: 58px; background: #fff; color: #443ab8; box-shadow: 0 18px 40px rgba(20,16,78,.28); }
+    .download-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+    .download-card .google-play-button { background: #171724; color: #fff; }
     .hash { margin-top: 18px; color: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
 
     .faq { background: #fff; }
@@ -238,6 +240,7 @@
       .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 42px; margin-top: 80px; }
       .showcase-row.reverse .showcase-copy { order: 0; }
       .download-card { grid-template-columns: 1fr; }
+      .download-actions { justify-content: flex-start; }
     }
 
     @media (max-width: 640px) {
@@ -263,6 +266,8 @@
       .showcase-media { min-height: 570px; }
       .gallery-track img { width: 244px; }
       .download-card { padding: 34px 25px; }
+      .download-actions { flex-direction: column; }
+      .download-actions .button { width: 100%; }
       .footer-row { align-items: flex-start; flex-direction: column; }
     }
 
@@ -281,6 +286,7 @@
     "applicationCategory": "BrowserApplication",
     "softwareVersion": "2.9",
     "downloadUrl": "https://www.52zixia.com/zixia-browser-release.apk",
+    "sameAs": "https://play.google.com/store/apps/details?id=com.zixia",
     "image": "https://www.52zixia.com/assets/icon.png",
     "description": "An Android browser with AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools."
   }
@@ -297,6 +303,7 @@
         <a href="#features">Features</a>
         <a href="#screens">Screenshots</a>
         <a href="#faq">Install help</a>
+        <a href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">Google Play</a>
         <a class="button nav-download" href="./zixia-browser-release.apk" download>Download Android APK</a>
       </nav>
     </div>
@@ -310,6 +317,10 @@
           <h1>Browse freely.<br><span>Understand more.</span></h1>
           <p class="hero-copy">Clean web browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud—all in one Android browser.</p>
           <div class="hero-actions">
+            <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
+              <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
+              Get it on Google Play
+            </a>
             <a class="button button-primary" href="./zixia-browser-release.apk" download>
               <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
               Download Android APK
@@ -418,13 +429,19 @@
         <div class="download-card reveal">
           <div>
             <h2>Download Zixia Browser</h2>
-            <p>Zixia is currently available as a direct Android APK download. After downloading, follow your device prompts to allow installation from your browser.</p>
+            <p>Install Zixia from Google Play, or download the Android APK directly. For a direct APK install, follow your device prompts to allow installation from your browser.</p>
             <div class="hash">SHA-256: 07D6CF85B3805E671B6613C075655549A070DDD148EEE126E03C93BDE766E18E</div>
           </div>
-          <a class="button" href="./zixia-browser-release.apk" download>
-            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
-            Download APK
-          </a>
+          <div class="download-actions">
+            <a class="button google-play-button" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
+              <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
+              Google Play
+            </a>
+            <a class="button" href="./zixia-browser-release.apk" download>
+              <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
+              Download APK
+            </a>
+          </div>
         </div>
       </div>
     </section>
