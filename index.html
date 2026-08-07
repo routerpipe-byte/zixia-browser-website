@@ -100,7 +100,12 @@
     .button-primary { color: #fff; background: linear-gradient(135deg, #7468ff, #367df5); box-shadow: 0 14px 32px rgba(71, 78, 227, .35); }
     .button-primary:hover { box-shadow: 0 18px 38px rgba(71, 78, 227, .44); }
     .button-ghost { color: #fff; border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.08); }
-    .nav-download { min-height: 40px; padding: 0 17px; font-size: 14px; background: #fff; color: #3f38aa; }
+    .nav-store,
+    .nav-download { min-height: 40px; padding: 0 17px; font-size: 14px; }
+    .nav-store { border-color: rgba(255,255,255,.32); background: rgba(255,255,255,.08); color: #fff; }
+    .nav-download { background: #fff; color: #3f38aa; }
+    .nav-links .nav-store:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.16); color: #fff; }
+    .nav-links .nav-download:hover { background: #fff; color: #3f38aa; }
     .download-icon { width: 18px; height: 18px; flex: 0 0 auto; }
 
     .hero {
@@ -303,7 +308,7 @@
         <a href="#features">Features</a>
         <a href="#screens">Screenshots</a>
         <a href="#faq">Install help</a>
-        <a href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">Google Play</a>
+        <a class="button nav-store" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">Google Play</a>
         <a class="button nav-download" href="./zixia-browser-release.apk" download>Download Android APK</a>
       </nav>
     </div>
