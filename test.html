@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#070b12">
+  <title>Download &amp; Streaming Test</title>
+  <style>
+    :root {
+      --bg: #070b12;
+      --panel: #101722;
+      --panel-soft: #151e2b;
+      --text: #f7f9fc;
+      --muted: #aab6c6;
+      --line: rgba(255, 255, 255, 0.11);
+      --accent: #ff5c35;
+      --accent-strong: #ff744f;
+      --green: #54d19a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 0%, rgba(255, 92, 53, 0.18), transparent 32rem),
+        radial-gradient(circle at 0% 45%, rgba(65, 108, 255, 0.10), transparent 30rem),
+        var(--bg);
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 16px;
+      color: #d8e0eb;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 18px rgba(84, 209, 154, 0.75);
+      content: "";
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .intro {
+      max-width: 690px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2.4vw, 21px);
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+      gap: 22px;
+      margin-top: 44px;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(21, 30, 43, 0.96), rgba(12, 18, 28, 0.96));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+    }
+
+    .download-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 30px;
+    }
+
+    .label {
+      margin: 0 0 15px;
+      color: var(--accent-strong);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 38px);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .card-copy {
+      margin: 16px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .file-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .meta-item {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .meta-item small {
+      display: block;
+      margin-bottom: 5px;
+      color: #8290a2;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .meta-item strong { font-size: 15px; }
+
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 56px;
+      margin-top: auto;
+      padding: 14px 20px;
+      border-radius: 16px;
+      color: #fff;
+      background: var(--accent);
+      box-shadow: 0 12px 30px rgba(255, 92, 53, 0.23);
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .download-button:hover {
+      transform: translateY(-2px);
+      background: var(--accent-strong);
+    }
+
+    .download-button:focus-visible {
+      outline: 3px solid rgba(255, 116, 79, 0.45);
+      outline-offset: 3px;
+    }
+
+    .download-button svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .video-card { background: #020305; }
+
+    .video-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      min-height: 260px;
+      background: #000;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(5, 8, 12, 0.72);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .video-badge::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(255, 92, 53, 0.85);
+      content: "";
+    }
+
+    .video-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px 22px 22px;
+      border-top: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .video-info strong { font-size: 17px; }
+
+    .video-info span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border: 1px solid rgba(84, 209, 154, 0.3);
+      border-radius: 999px;
+      color: #82e6b8;
+      background: rgba(84, 209, 154, 0.08);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .instructions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .step {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(16, 23, 34, 0.72);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      color: #fff;
+      background: rgba(255, 92, 53, 0.16);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .step h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: #738195;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .page { padding-top: 38px; }
+      .grid { grid-template-columns: 1fr; }
+      .instructions { grid-template-columns: 1fr; }
+      .video-wrap { min-height: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .download-button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Network Test Ready</p>
+    <h1>Download &amp;<br>Streaming Test</h1>
+    <p class="intro">
+      Use the text download and the looping race video to record a clear before-and-after network acceleration test.
+    </p>
+
+    <section class="grid" aria-label="Test files">
+      <article class="card download-card">
+        <p class="label">Download Test</p>
+        <h2>Great Expectations</h2>
+        <p class="card-copy">
+          Download the complete English plain-text edition by Charles Dickens and confirm that the transfer starts immediately.
+        </p>
+
+        <div class="file-meta" aria-label="File details">
+          <div class="meta-item">
+            <small>Format</small>
+            <strong>TXT</strong>
+          </div>
+          <div class="meta-item">
+            <small>File size</small>
+            <strong>1.01 MB</strong>
+          </div>
+        </div>
+
+        <a class="download-button" href="assets/test/great-expectations-charles-dickens.txt" download="Great Expectations - Charles Dickens.txt">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Z"/></svg>
+          Download the TXT File
+        </a>
+      </article>
+
+      <article class="card video-card">
+        <div class="video-wrap">
+          <video autoplay muted loop playsinline controls preload="auto" aria-label="Looping motorcycle race test video">
+            <source src="assets/test/motorcycle-race.mp4" type="video/mp4">
+            Your browser does not support MP4 video playback.
+          </video>
+          <div class="video-badge">Streaming Test</div>
+        </div>
+        <div class="video-info">
+          <div>
+            <strong>Motorcycle Race</strong>
+            <span>Full HD MP4 · 16.53 MB · Muted loop</span>
+          </div>
+          <div class="status">Auto Loop</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="instructions" aria-label="Test instructions">
+      <article class="step">
+        <span class="step-number">01</span>
+        <h3>Start the recording</h3>
+        <p>Keep the full page visible so the download and video states are easy to compare.</p>
+      </article>
+      <article class="step">
+        <span class="step-number">02</span>
+        <h3>Run the download</h3>
+        <p>Tap the TXT button and check the transfer start time and completion speed.</p>
+      </article>
+      <article class="step">
+        <span class="step-number">03</span>
+        <h3>Compare playback</h3>
+        <p>Watch startup time, smoothness, and buffering before and after acceleration.</p>
+      </article>
+    </section>
+
+    <footer>Test assets are provided for browser performance evaluation.</footer>
+  </main>
+</body>
+</html>
