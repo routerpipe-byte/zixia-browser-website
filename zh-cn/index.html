@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5f55e8">
-  <meta name="description" content="紫霞浏览器是一款面向 Android 的多功能浏览器，集 AI 助手、广告拦截、脚本扩展、网页视频倍速、沉浸阅读与听书于一体。">
+  <meta name="description" content="紫霞浏览器为 iPhone、iPad 与 Android 提供 AI 助手、广告拦截、脚本扩展、网页视频倍速、沉浸阅读与听书功能。">
+  <meta name="apple-itunes-app" content="app-id=6794041773">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:title" content="紫霞浏览器｜浏览、阅读与 AI，一处完成">
-  <meta property="og:description" content="清爽浏览、AI 理解、脚本扩展、视频倍速、阅读与听书。可通过 Google Play 或 Android APK 安装。">
-  <meta property="og:image" content="https://www.52zixia.com/assets/screens/1.jpg">
+  <meta property="og:description" content="清爽浏览、AI 理解、脚本扩展、视频倍速、阅读与听书。可通过 App Store、Google Play 或 Android APK 安装。">
+  <meta property="og:image" content="https://www.52zixia.com/assets/screens-ios/zh-home.jpg">
   <meta property="og:url" content="https://www.52zixia.com/zh-cn/">
   <link rel="canonical" href="https://www.52zixia.com/zh-cn/">
   <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/zh-cn/">
   <link rel="alternate" hreflang="en" href="https://www.52zixia.com/">
   <link rel="alternate" hreflang="x-default" href="https://www.52zixia.com/">
-  <title>紫霞浏览器｜Android 浏览器</title>
+  <title>紫霞浏览器｜iPhone、iPad 与 Android 浏览器</title>
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/icon.png">
   <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
@@ -90,6 +91,8 @@
     .button:hover { transform: translateY(-2px); }
     .button-primary { color: #fff; background: linear-gradient(135deg, #7468ff, #367df5); box-shadow: 0 14px 32px rgba(71, 78, 227, .35); }
     .button-primary:hover { box-shadow: 0 18px 38px rgba(71, 78, 227, .44); }
+    .button-app-store { color: #171724; background: #fff; box-shadow: 0 14px 32px rgba(12, 10, 46, .3); }
+    .button-app-store:hover { box-shadow: 0 18px 38px rgba(12, 10, 46, .4); }
     .button-ghost { color: #fff; border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.08); }
     .nav-store,
     .nav-download { min-height: 40px; padding: 0 17px; font-size: 14px; }
@@ -206,6 +209,7 @@
     .download-card p { max-width: 700px; margin: 0; color: rgba(255,255,255,.72); line-height: 1.8; }
     .download-card .button { min-height: 58px; background: #fff; color: #443ab8; box-shadow: 0 18px 40px rgba(20,16,78,.28); }
     .download-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+    .download-card .app-store-button { background: #171724; color: #fff; }
     .download-card .google-play-button { background: #171724; color: #fff; }
     .hash { margin-top: 18px; color: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
 
@@ -276,15 +280,28 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "紫霞浏览器",
-    "operatingSystem": "Android 4.2+",
-    "applicationCategory": "BrowserApplication",
-    "softwareVersion": "2.9",
-    "downloadUrl": "https://www.52zixia.com/zixia-browser-release.apk",
-    "sameAs": "https://play.google.com/store/apps/details?id=com.zixia",
-    "image": "https://www.52zixia.com/assets/icon.png",
-    "description": "集 AI 助手、广告拦截、脚本扩展、网页视频倍速、阅读与听书于一体的 Android 浏览器。"
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "紫霞浏览器 iPhone 与 iPad 版",
+        "operatingSystem": "iOS, iPadOS",
+        "applicationCategory": "BrowserApplication",
+        "downloadUrl": "https://apps.apple.com/app/id6794041773",
+        "sameAs": "https://apps.apple.com/app/id6794041773",
+        "image": "https://www.52zixia.com/assets/icon.png",
+        "description": "为 iPhone 与 iPad 提供 AI 助手、广告拦截、脚本扩展、网页视频倍速、沉浸阅读与听书功能的浏览器。"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "紫霞浏览器 Android 版",
+        "operatingSystem": "Android 4.2+",
+        "applicationCategory": "BrowserApplication",
+        "downloadUrl": "https://www.52zixia.com/zixia-browser-release.apk",
+        "sameAs": "https://play.google.com/store/apps/details?id=com.zixia",
+        "image": "https://www.52zixia.com/assets/icon.png",
+        "description": "集 AI 助手、广告拦截、脚本扩展、网页视频倍速、阅读与听书于一体的 Android 浏览器。"
+      }
+    ]
   }
   </script>
 </head>
@@ -299,8 +316,9 @@
         <a href="#features">产品特性</a>
         <a href="#screens">功能截图</a>
         <a href="#faq">安装帮助</a>
+        <a class="button nav-store" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">App Store</a>
         <a class="button nav-store" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">Google Play</a>
-        <a class="button nav-download" href="../zixia-browser-release.apk" download>下载 Android APK</a>
+        <a class="button nav-download" href="#download">下载应用</a>
       </nav>
     </div>
   </header>
@@ -309,30 +327,32 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-content">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>Android · 紫霞浏览器 2.9</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>iPhone · iPad · Android</div>
           <h1>浏览更自由，<br><span>内容更好懂。</span></h1>
-          <p class="hero-copy">把网页浏览、AI 理解、脚本扩展、视频倍速、沉浸阅读与听书放进一个清爽的 Android 浏览器。</p>
+          <p class="hero-copy">把网页浏览、AI 理解、脚本扩展、视频倍速、沉浸阅读与听书放进一个清爽的浏览器。</p>
           <div class="hero-actions">
+            <a class="button button-app-store" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
+              在 App Store 下载
+            </a>
             <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
               <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
               前往 Google Play
             </a>
-            <a class="button button-primary" href="../zixia-browser-release.apk" download>
+            <a class="button button-ghost" href="../zixia-browser-release.apk" download>
               <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
               下载 Android APK
             </a>
-            <a class="button button-ghost" href="#features">了解产品特性</a>
           </div>
           <div class="hero-meta">
+            <span><i class="check">✓</i>支持 iPhone 与 iPad</span>
             <span><i class="check">✓</i>Android 4.2 及以上</span>
-            <span><i class="check">✓</i>APK 约 22.1 MB</span>
-            <span><i class="check">✓</i>无需应用商店</span>
+            <span><i class="check">✓</i>Android APK 约 22.1 MB</span>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="紫霞浏览器界面预览">
-          <img class="phone-shot back" src="../assets/screens/9.jpg" alt="紫霞浏览器沉浸阅读与听书界面">
-          <img class="phone-shot front" src="../assets/screens/1.jpg" alt="紫霞浏览器首页">
+        <div class="hero-visual" aria-label="紫霞浏览器 iOS 与 Android 界面预览">
+          <img class="phone-shot back" src="../assets/screens/9.jpg" alt="紫霞浏览器 Android 版沉浸阅读与听书界面">
+          <img class="phone-shot front" src="../assets/screens-ios/zh-home.jpg" alt="紫霞浏览器 iPhone 版首页">
           <div class="float-chip one"><span class="chip-icon">听</span><span>沉浸阅读与听书<small>朗读 · 定时 · 倍速</small></span></div>
           <div class="float-chip two"><span class="chip-icon">2×</span><span>视频倍速<small>0.10× 至 50×</small></span></div>
         </div>
@@ -403,9 +423,11 @@
       <div class="wrap reveal">
         <div class="section-kicker">Screenshots</div>
         <h2 class="section-title">从首页到阅读，功能一目了然</h2>
-        <p class="section-lead">横向滑动查看紫霞浏览器的完整功能截图。</p>
+        <p class="section-lead">横向滑动查看紫霞浏览器 iOS 与 Android 版真实界面；不同平台与系统能力下，界面和可用功能可能有所差异。</p>
       </div>
-      <div class="gallery-track" aria-label="紫霞浏览器功能截图列表">
+      <div class="gallery-track" aria-label="紫霞浏览器 iOS 与 Android 功能截图列表">
+        <img src="../assets/screens-ios/zh-home.jpg" loading="lazy" alt="紫霞浏览器 iPhone 版首页">
+        <img src="../assets/screens-ios/zh-ai-assistant.jpg" loading="lazy" alt="紫霞浏览器 iPhone 版 AI 助手">
         <img src="../assets/screens/1.jpg" loading="lazy" alt="紫霞浏览器首页">
         <img src="../assets/screens/2.jpg" loading="lazy" alt="紫霞浏览器工具箱">
         <img src="../assets/screens/4.jpg" loading="lazy" alt="紫霞浏览器 AI 助手">
@@ -424,10 +446,13 @@
         <div class="download-card reveal">
           <div>
             <h2>现在，下载紫霞浏览器</h2>
-            <p>你可以通过 Google Play 安装紫霞浏览器，也可以直接下载 Android APK。直接安装 APK 时，请按系统提示允许浏览器安装应用。</p>
-            <div class="hash">SHA-256: 07D6CF85B3805E671B6613C075655549A070DDD148EEE126E03C93BDE766E18E</div>
+            <p>iPhone 与 iPad 用户可前往 App Store 安装；Android 用户可通过 Google Play 安装，或直接下载 APK。</p>
+            <div class="hash">Android APK SHA-256: 65254A0AAD5EC2A2642FA7D5359F49044FE6C67E7029559A53A908A20B548BDA</div>
           </div>
           <div class="download-actions">
+            <a class="button app-store-button" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
+              App Store
+            </a>
             <a class="button google-play-button" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
               <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
               Google Play
@@ -446,9 +471,9 @@
         <div class="section-kicker">Installation</div>
         <h2 class="section-title">安装常见问题</h2>
         <div class="faq-list">
-          <details><summary>紫霞浏览器支持哪些设备？</summary><p>当前提供 Android 版本，最低支持 Android 4.2（API 17）。不同设备的系统 WebView 版本可能影响部分网页特性。</p></details>
+          <details><summary>紫霞浏览器支持哪些设备？</summary><p>紫霞浏览器已在 App Store 提供兼容 iPhone 与 iPad 的版本，同时支持 Android 4.2（API 17）及以上设备。具体界面和功能可能因平台、系统能力与网页引擎而异。</p></details>
           <details><summary>为什么安装时会出现安全提示？</summary><p>因为安装包由网页直接下载，而不是通过应用商店分发。请在系统设置中临时允许当前浏览器“安装未知应用”，安装完成后可以关闭该权限。</p></details>
-          <details><summary>如何确认下载文件完整？</summary><p>当前 APK 的 SHA-256 为 07D6CF85B3805E671B6613C075655549A070DDD148EEE126E03C93BDE766E18E，可使用系统或第三方校验工具核对。</p></details>
+          <details><summary>如何确认下载文件完整？</summary><p>当前 APK 的 SHA-256 为 65254A0AAD5EC2A2642FA7D5359F49044FE6C67E7029559A53A908A20B548BDA，可使用系统或第三方校验工具核对。</p></details>
           <details><summary>隐私政策和用户协议在哪里查看？</summary><p>可以访问本站的<a href="./privacy/" style="color:#564de0;font-weight:700">《紫霞浏览器隐私政策》</a>和<a href="./terms/" style="color:#564de0;font-weight:700">《紫霞浏览器用户协议》</a>。</p></details>
         </div>
       </div>
