@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5f55e8">
-  <meta name="description" content="Zixia Browser is an Android browser with AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools.">
+  <meta name="description" content="Zixia Browser brings AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools to iPhone, iPad, and Android.">
+  <meta name="apple-itunes-app" content="app-id=6794041773">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Zixia Browser | Browse, read, and understand more">
-  <meta property="og:description" content="Clean browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud. Available on Google Play or as a direct Android APK.">
-  <meta property="og:image" content="https://www.52zixia.com/assets/screens-en/1.jpg">
+  <meta property="og:description" content="Clean browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud. Available on the App Store, Google Play, and as a direct Android APK.">
+  <meta property="og:image" content="https://www.52zixia.com/assets/screens-ios/en-home.jpg">
   <meta property="og:url" content="https://www.52zixia.com/">
   <link rel="canonical" href="https://www.52zixia.com/">
   <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/zh-cn/">
   <link rel="alternate" hreflang="en" href="https://www.52zixia.com/">
   <link rel="alternate" hreflang="x-default" href="https://www.52zixia.com/">
-  <title>Zixia Browser | Android Browser</title>
+  <title>Zixia Browser | iPhone, iPad &amp; Android Browser</title>
   <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/icon.png">
   <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
@@ -99,6 +100,8 @@
     .button:hover { transform: translateY(-2px); }
     .button-primary { color: #fff; background: linear-gradient(135deg, #7468ff, #367df5); box-shadow: 0 14px 32px rgba(71, 78, 227, .35); }
     .button-primary:hover { box-shadow: 0 18px 38px rgba(71, 78, 227, .44); }
+    .button-app-store { color: #171724; background: #fff; box-shadow: 0 14px 32px rgba(12, 10, 46, .3); }
+    .button-app-store:hover { box-shadow: 0 18px 38px rgba(12, 10, 46, .4); }
     .button-ghost { color: #fff; border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.08); }
     .nav-store,
     .nav-download { min-height: 40px; padding: 0 17px; font-size: 14px; }
@@ -215,6 +218,7 @@
     .download-card p { max-width: 700px; margin: 0; color: rgba(255,255,255,.72); line-height: 1.8; }
     .download-card .button { min-height: 58px; background: #fff; color: #443ab8; box-shadow: 0 18px 40px rgba(20,16,78,.28); }
     .download-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+    .download-card .app-store-button { background: #171724; color: #fff; }
     .download-card .google-play-button { background: #171724; color: #fff; }
     .hash { margin-top: 18px; color: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
 
@@ -285,15 +289,28 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Zixia Browser",
-    "operatingSystem": "Android 4.2+",
-    "applicationCategory": "BrowserApplication",
-    "softwareVersion": "2.9",
-    "downloadUrl": "https://www.52zixia.com/zixia-browser-release.apk",
-    "sameAs": "https://play.google.com/store/apps/details?id=com.zixia",
-    "image": "https://www.52zixia.com/assets/icon.png",
-    "description": "An Android browser with AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools."
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Zixia Browser for iPhone and iPad",
+        "operatingSystem": "iOS, iPadOS",
+        "applicationCategory": "BrowserApplication",
+        "downloadUrl": "https://apps.apple.com/app/id6794041773",
+        "sameAs": "https://apps.apple.com/app/id6794041773",
+        "image": "https://www.52zixia.com/assets/icon.png",
+        "description": "A browser for iPhone and iPad with AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Zixia Browser for Android",
+        "operatingSystem": "Android 4.2+",
+        "applicationCategory": "BrowserApplication",
+        "downloadUrl": "https://www.52zixia.com/zixia-browser-release.apk",
+        "sameAs": "https://play.google.com/store/apps/details?id=com.zixia",
+        "image": "https://www.52zixia.com/assets/icon.png",
+        "description": "An Android browser with AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools."
+      }
+    ]
   }
   </script>
 </head>
@@ -308,8 +325,9 @@
         <a href="#features">Features</a>
         <a href="#screens">Screenshots</a>
         <a href="#faq">Install help</a>
+        <a class="button nav-store" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">App Store</a>
         <a class="button nav-store" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">Google Play</a>
-        <a class="button nav-download" href="./zixia-browser-release.apk" download>Download Android APK</a>
+        <a class="button nav-download" href="#download">Download apps</a>
       </nav>
     </div>
   </header>
@@ -318,30 +336,32 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-content">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>Android · Zixia Browser 2.9</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>iPhone · iPad · Android</div>
           <h1>Browse freely.<br><span>Understand more.</span></h1>
-          <p class="hero-copy">Clean web browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud—all in one Android browser.</p>
+          <p class="hero-copy">Clean web browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud—all in one focused browser.</p>
           <div class="hero-actions">
+            <a class="button button-app-store" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
+              Download on the App Store
+            </a>
             <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
               <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
               Get it on Google Play
             </a>
-            <a class="button button-primary" href="./zixia-browser-release.apk" download>
+            <a class="button button-ghost" href="./zixia-browser-release.apk" download>
               <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
               Download Android APK
             </a>
-            <a class="button button-ghost" href="#features">Explore features</a>
           </div>
           <div class="hero-meta">
+            <span><i class="check">✓</i>Made for iPhone and iPad</span>
             <span><i class="check">✓</i>Android 4.2 or later</span>
-            <span><i class="check">✓</i>APK about 22.1 MB</span>
-            <span><i class="check">✓</i>No app store required</span>
+            <span><i class="check">✓</i>Direct Android APK about 22.1 MB</span>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Zixia Browser interface preview">
-          <img class="phone-shot back" src="./assets/screens-en/9.jpg" alt="Zixia Browser immersive reading and read-aloud player">
-          <img class="phone-shot front" src="./assets/screens-en/1.jpg" alt="Zixia Browser home screen">
+        <div class="hero-visual" aria-label="Zixia Browser iOS and Android interface preview">
+          <img class="phone-shot back" src="./assets/screens-en/9.jpg" alt="Zixia Browser immersive reading and read-aloud player on Android">
+          <img class="phone-shot front" src="./assets/screens-ios/en-home.jpg" alt="Zixia Browser home screen on iPhone">
           <div class="float-chip one"><span class="chip-icon">▶</span><span>Immersive reading<small>Read aloud · Timer · Speed</small></span></div>
           <div class="float-chip two"><span class="chip-icon">2×</span><span>Video speed<small>0.10× to 50×</small></span></div>
         </div>
@@ -412,9 +432,11 @@
       <div class="wrap reveal">
         <div class="section-kicker">Screenshots</div>
         <h2 class="section-title">From the home screen to immersive reading</h2>
-        <p class="section-lead">Swipe through real English interface screenshots from Zixia Browser.</p>
+        <p class="section-lead">Swipe through real iOS and Android interface screenshots. Layout and feature availability may vary by platform and system capabilities.</p>
       </div>
-      <div class="gallery-track" aria-label="Zixia Browser feature screenshots">
+      <div class="gallery-track" aria-label="Zixia Browser iOS and Android feature screenshots">
+        <img src="./assets/screens-ios/en-home.jpg" loading="lazy" alt="Zixia Browser home screen on iPhone">
+        <img src="./assets/screens-ios/en-ai-assistant.jpg" loading="lazy" alt="Zixia Browser AI assistant on iPhone">
         <img src="./assets/screens-en/1.jpg" loading="lazy" alt="Zixia Browser home screen">
         <img src="./assets/screens-en/2.jpg" loading="lazy" alt="Zixia Browser quick tools">
         <img src="./assets/screens-en/3.jpg" loading="lazy" alt="Zixia Browser settings panel">
@@ -434,10 +456,13 @@
         <div class="download-card reveal">
           <div>
             <h2>Download Zixia Browser</h2>
-            <p>Install Zixia from Google Play, or download the Android APK directly. For a direct APK install, follow your device prompts to allow installation from your browser.</p>
-            <div class="hash">SHA-256: 07D6CF85B3805E671B6613C075655549A070DDD148EEE126E03C93BDE766E18E</div>
+            <p>Install Zixia on iPhone or iPad from the App Store. On Android, get it from Google Play or download the APK directly.</p>
+            <div class="hash">Android APK SHA-256: 65254A0AAD5EC2A2642FA7D5359F49044FE6C67E7029559A53A908A20B548BDA</div>
           </div>
           <div class="download-actions">
+            <a class="button app-store-button" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
+              App Store
+            </a>
             <a class="button google-play-button" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
               <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
               Google Play
@@ -456,9 +481,9 @@
         <div class="section-kicker">Installation</div>
         <h2 class="section-title">Installation FAQ</h2>
         <div class="faq-list">
-          <details><summary>Which devices are supported?</summary><p>Zixia currently supports Android 4.2 (API 17) and later. Some web features may vary depending on the system WebView available on your device.</p></details>
+          <details><summary>Which devices are supported?</summary><p>Zixia is available for compatible iPhone and iPad devices through the App Store, and for Android 4.2 (API 17) and later. Features and layout may vary by platform, operating-system capabilities, and web engine.</p></details>
           <details><summary>Why does Android show an installation warning?</summary><p>The APK is downloaded directly from this website rather than an app store. Temporarily allow your browser to install unknown apps in Android settings; you can turn that permission off after installation.</p></details>
-          <details><summary>How can I verify the APK?</summary><p>The current APK SHA-256 is 07D6CF85B3805E671B6613C075655549A070DDD148EEE126E03C93BDE766E18E. Compare it with a system or third-party checksum tool.</p></details>
+          <details><summary>How can I verify the APK?</summary><p>The current APK SHA-256 is 65254A0AAD5EC2A2642FA7D5359F49044FE6C67E7029559A53A908A20B548BDA. Compare it with a system or third-party checksum tool.</p></details>
           <details><summary>Where are the Privacy Policy and Terms of Use?</summary><p>Read the <a href="./privacy/" style="color:#564de0;font-weight:700">Zixia Browser Privacy Policy</a> and <a href="./terms/" style="color:#564de0;font-weight:700">Terms of Use</a>.</p></details>
         </div>
       </div>
