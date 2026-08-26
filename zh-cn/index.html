@@ -208,7 +208,13 @@
     .download-card h2 { margin: 0 0 14px; font-size: clamp(36px, 5vw, 58px); }
     .download-card p { max-width: 700px; margin: 0; color: rgba(255,255,255,.72); line-height: 1.8; }
     .download-card .button { min-height: 58px; background: #fff; color: #443ab8; box-shadow: 0 18px 40px rgba(20,16,78,.28); }
-    .download-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+    .download-actions { display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
+    .download-buttons { display: grid; gap: 12px; min-width: 210px; }
+    .download-buttons .button { width: 100%; }
+    .store-qr { display: grid; justify-items: center; gap: 9px; flex: 0 0 auto; padding: 12px; border-radius: 20px; background: #fff; color: #171724; box-shadow: 0 18px 40px rgba(20,16,78,.28); transition: transform .2s ease, box-shadow .2s ease; }
+    .store-qr:hover { transform: translateY(-2px); box-shadow: 0 22px 46px rgba(20,16,78,.36); }
+    .store-qr img { width: 156px; height: 156px; }
+    .store-qr span { font-size: 12px; font-weight: 760; letter-spacing: .01em; }
     .download-card .app-store-button { background: #171724; color: #fff; }
     .download-card .google-play-button { background: #171724; color: #fff; }
     .hash { margin-top: 18px; color: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
@@ -241,6 +247,9 @@
       .showcase-row.reverse .showcase-copy { order: 0; }
       .download-card { grid-template-columns: 1fr; }
       .download-actions { justify-content: flex-start; }
+      .store-qr { display: none; }
+      .download-buttons { display: flex; flex-wrap: wrap; min-width: 0; }
+      .download-buttons .button { width: auto; }
     }
 
     @media (max-width: 640px) {
@@ -266,8 +275,9 @@
       .showcase-media { min-height: 570px; }
       .gallery-track img { width: 244px; }
       .download-card { padding: 34px 25px; }
-      .download-actions { flex-direction: column; }
-      .download-actions .button { width: 100%; }
+      .download-actions, .download-buttons { width: 100%; }
+      .download-buttons { display: grid; }
+      .download-buttons .button { width: 100%; }
       .footer-row { align-items: flex-start; flex-direction: column; }
     }
 
@@ -450,17 +460,23 @@
             <div class="hash">Android APK SHA-256: 65254A0AAD5EC2A2642FA7D5359F49044FE6C67E7029559A53A908A20B548BDA</div>
           </div>
           <div class="download-actions">
-            <a class="button app-store-button" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
-              App Store
+            <a class="store-qr" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer" aria-label="扫码或打开 App Store 下载紫霞浏览器">
+              <img src="../assets/app-store-qr.png" width="156" height="156" loading="lazy" alt="紫霞浏览器 App Store 下载二维码">
+              <span>用 iPhone 扫码下载</span>
             </a>
-            <a class="button google-play-button" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
-              <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
-              Google Play
-            </a>
-            <a class="button" href="../zixia-browser-release.apk" download>
-              <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
-              下载 APK
-            </a>
+            <div class="download-buttons">
+              <a class="button app-store-button" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
+                App Store
+              </a>
+              <a class="button google-play-button" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
+                <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
+                Google Play
+              </a>
+              <a class="button" href="../zixia-browser-release.apk" download>
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
+                下载 APK
+              </a>
+            </div>
           </div>
         </div>
       </div>
