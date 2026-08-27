@@ -146,6 +146,12 @@
     .hero h1 span { color: #b9d8ff; }
     .hero-copy { max-width: 610px; margin: 0 0 32px; color: rgba(255,255,255,.78); font-size: clamp(18px, 2vw, 22px); line-height: 1.8; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-qr { display: inline-flex; align-items: center; gap: 13px; width: max-content; max-width: 100%; padding: 8px 14px 8px 8px; border: 1px solid rgba(255,255,255,.42); border-radius: 20px; background: rgba(255,255,255,.96); color: #23213f; box-shadow: 0 18px 42px rgba(16,11,58,.28); transition: transform .2s ease, box-shadow .2s ease; }
+    .hero-qr:hover { transform: translateY(-2px); box-shadow: 0 22px 48px rgba(16,11,58,.36); }
+    .hero-qr img { width: 96px; height: 96px; flex: 0 0 auto; border-radius: 10px; }
+    .hero-qr-copy { display: grid; gap: 5px; text-align: left; }
+    .hero-qr-copy strong { font-size: 15px; }
+    .hero-qr-copy span { max-width: 170px; color: #6c6982; font-size: 12px; line-height: 1.5; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px; color: rgba(255,255,255,.58); font-size: 13px; }
     .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
     .check { width: 17px; height: 17px; display: grid; place-items: center; border-radius: 50%; background: rgba(130, 221, 255, .16); color: #a8e6ff; font-size: 11px; }
@@ -220,10 +226,10 @@
     .download-actions { display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
     .download-buttons { display: grid; gap: 12px; min-width: 210px; }
     .download-buttons .button { width: 100%; }
-    .store-qr { display: grid; justify-items: center; gap: 9px; flex: 0 0 auto; padding: 12px; border-radius: 20px; background: #fff; color: #171724; box-shadow: 0 18px 40px rgba(20,16,78,.28); transition: transform .2s ease, box-shadow .2s ease; }
-    .store-qr:hover { transform: translateY(-2px); box-shadow: 0 22px 46px rgba(20,16,78,.36); }
-    .store-qr img { width: 156px; height: 156px; }
-    .store-qr span { font-size: 12px; font-weight: 760; letter-spacing: .01em; }
+    .site-qr { display: grid; justify-items: center; gap: 9px; flex: 0 0 auto; padding: 12px; border-radius: 20px; background: #fff; color: #171724; box-shadow: 0 18px 40px rgba(20,16,78,.28); transition: transform .2s ease, box-shadow .2s ease; }
+    .site-qr:hover { transform: translateY(-2px); box-shadow: 0 22px 46px rgba(20,16,78,.36); }
+    .site-qr img { width: 156px; height: 156px; }
+    .site-qr span { font-size: 12px; font-weight: 760; letter-spacing: .01em; }
     .download-card .app-store-button { background: #171724; color: #fff; }
     .download-card .google-play-button { background: #171724; color: #fff; }
     .hash { margin-top: 18px; color: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
@@ -256,7 +262,7 @@
       .showcase-row.reverse .showcase-copy { order: 0; }
       .download-card { grid-template-columns: 1fr; }
       .download-actions { justify-content: flex-start; }
-      .store-qr { display: none; }
+      .site-qr { display: none; }
       .download-buttons { display: flex; flex-wrap: wrap; min-width: 0; }
       .download-buttons .button { width: auto; }
     }
@@ -273,6 +279,8 @@
       .hero-copy { font-size: 17px; }
       .hero-actions { flex-direction: column; }
       .hero-actions .button { width: 100%; }
+      .hero-qr { width: 100%; justify-content: center; }
+      .hero-qr img { width: 96px; height: 96px; }
       .hero-visual { height: 515px; }
       .phone-shot.front { width: 280px; right: 6px; }
       .phone-shot.back { width: 230px; left: 2px; bottom: -20px; }
@@ -360,6 +368,10 @@
             <a class="button button-ghost" href="./zixia-browser-release.apk" download>
               <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
               Download Android APK
+            </a>
+            <a class="hero-qr" href="https://www.52zixia.com/" aria-label="Open the Zixia Browser website on your phone">
+              <img src="./assets/site-download-qr.png" width="96" height="96" alt="QR code for www.52zixia.com">
+              <span class="hero-qr-copy"><strong>Scan with your phone</strong><span>Open 52zixia.com, then choose iOS or Android.</span></span>
             </a>
           </div>
           <div class="hero-meta">
@@ -470,9 +482,9 @@
             <div class="hash">Android APK SHA-256: 65254A0AAD5EC2A2642FA7D5359F49044FE6C67E7029559A53A908A20B548BDA</div>
           </div>
           <div class="download-actions">
-            <a class="store-qr" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer" aria-label="Scan or open Zixia Browser in the App Store">
-              <img src="./assets/app-store-qr.png" width="156" height="156" loading="lazy" alt="QR code for Zixia Browser on the App Store">
-              <span>Scan with iPhone</span>
+            <a class="site-qr" href="https://www.52zixia.com/" aria-label="Open the Zixia Browser website on your phone">
+              <img src="./assets/site-download-qr.png" width="156" height="156" loading="lazy" alt="QR code for www.52zixia.com">
+              <span>Scan to open 52zixia.com</span>
             </a>
             <div class="download-buttons">
               <a class="button app-store-button" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
