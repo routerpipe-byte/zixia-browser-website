@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Tap, double-tap and keys · SWF demos · Zixia Browser</title>
+<style>
+:root{--bg:#070b12;--panel:#101722;--text:#f7f9fc;--muted:#aab6c6;--line:rgba(255,255,255,.11);--accent:#ff5c35}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 85% 0%,rgba(255,92,53,.16),transparent 32rem),var(--bg)}
+a{color:inherit}
+.page{width:min(1040px,calc(100% - 28px));margin:0 auto;padding:28px 0 40px}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(26px,5vw,40px);margin:8px 0 10px}
+h1.small{font-size:22px;margin:6px 0 10px}
+p{color:var(--muted);line-height:1.6;margin:0 0 14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+.card{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+.card b{display:block;font-size:18px;margin-bottom:6px}
+.card span{color:var(--muted);font-size:14px;line-height:1.5}
+.stage{width:min(100%,calc((100vh - 96px) * 16 / 9));aspect-ratio:16/9;margin:0 auto 16px;background:#000;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.stage>*{display:block;width:100%!important;height:100%!important}
+.back{font-size:14px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:22px}
+</style>
+</head>
+<body><main class="page">
+<a class="back" href="./">← All SWF demos</a>
+<h1 class="small">Tap, double-tap and keys</h1>
+<div class="stage"><embed src="swf/Game.swf" type="application/x-shockwave-flash" width="100%" height="100%" bgcolor="#000000"></div>
+<p>Tap a circle (+1), double-tap the spinning star (+5), and steer the ship to the coin (+2) with the arrow keys or the on-screen controller (≡ → Virtual Controller).</p>
+<p class="note">SWF ("Flash") content on these pages is played by <a href="https://ruffle.rs">Ruffle</a>, an open-source SWF player (MIT / Apache-2.0). It is not Adobe Flash Player. The demos were made for Zixia Browser.</p>
+</main></body></html>
