@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Emulator demo · Zixia Browser</title>
+<style>
+:root{--bg:#070b12;--panel:#101722;--text:#f7f9fc;--muted:#aab6c6;--line:rgba(255,255,255,.11);--accent:#ff5c35}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 85% 0%,rgba(255,92,53,.16),transparent 32rem),var(--bg)}
+a{color:inherit}
+.page{width:min(860px,calc(100% - 28px));margin:0 auto;padding:28px 0 40px}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(26px,5vw,40px);margin:8px 0 10px}
+h2{font-size:20px;margin:26px 0 8px}
+p,li{color:var(--muted);line-height:1.6}
+p{margin:0 0 14px}
+ol{padding-left:22px;margin:0 0 14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:18px}
+.card b{display:block;font-size:18px;margin-bottom:6px;color:var(--text)}
+.button{display:inline-block;margin-top:10px;padding:12px 18px;border-radius:12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.note{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:22px}
+</style>
+</head>
+<body><main class="page">
+<span class="eyebrow">Zixia Browser</span>
+<h1>Emulator demo</h1>
+<p>Zixia Browser can open NES, Game Boy, Game Boy Color and Game Boy Advance game files that you download or import yourself. The app includes no games. The game below is free, open-source homebrew that may be shared.</p>
+<div class="card">
+<b>2048 for NES</b>
+<p>The sliding-number puzzle 2048 on the NES: slide the tiles with the D-pad, merge equal numbers and reach 2048. Select turns the music on or off.</p>
+<a class="button" href="roms/2048.nes" download>Download game (24 KB)</a>
+</div>
+<h2>How to play</h2>
+<ol>
+<li>Tap “Download game” and confirm the download.</li>
+<li>Open the finished download in the Downloads list. The game starts in the built-in emulator.</li>
+<li>Play with the on-screen controller (D-pad, A, B, Start, Select), a game controller or a keyboard.</li>
+</ol>
+<p class="note">2048 for NES by Maciej Muszkowski (<a href="https://github.com/mmuszkow/2048-nes">source</a>), built with Shiru’s neslib and FamiTone2; released into the public domain under the Unlicense (<a href="roms/2048-LICENSE.txt">license text</a>). The game file is the unmodified build from that repository. Based on the game 2048 by Gabriele Cirulli. Zixia Browser uses the open-source emulator cores binjnes (MIT) and mGBA (MPL-2.0).</p>
+</main></body></html>
