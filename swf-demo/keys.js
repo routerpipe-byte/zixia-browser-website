@@ -1,6 +1,11 @@
+// The SWF player on this page: whatever element now stands where the <embed> was (Ruffle's
+// player element, or a browser's own Flash player in its place).
+function zixiaPlayer() {
+  return document.querySelector('ruffle-embed, ruffle-object, ruffle-player') || document.querySelector('.stage > *');
+}
 // Sends a key press to the SWF player on this page, for the buttons below the game.
 function zixiaPressKey(code, key, keyCode) {
-  var player = document.querySelector('ruffle-embed, ruffle-object, ruffle-player') || document.querySelector('embed');
+  var player = zixiaPlayer();
   if (!player) return;
   try { player.focus({preventScroll: true}); } catch (e) {}
   ['keydown', 'keyup'].forEach(function (type, i) {
@@ -21,7 +26,7 @@ function zixiaJuiceOnLoad() {
   document.addEventListener('pointerdown', stop, true);
   document.addEventListener('keydown', function (e) { if (e.isTrusted) stop(); }, true);
   var timer = setInterval(function () {
-    var player = document.querySelector('ruffle-embed, ruffle-object, ruffle-player');
+    var player = zixiaPlayer();
     if (stopped || presses >= 10) { clearInterval(timer); return; }
     if (player && player.readyState === 2) { presses++; zixiaPressKey('Enter', 'Enter', 13); }
   }, 1000);
