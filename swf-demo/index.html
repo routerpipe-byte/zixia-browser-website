@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>SWF demos · Zixia Browser</title>
+<title>Juicy Breakout · SWF demo · Zixia Browser</title>
 <style>
 :root{--bg:#070b12;--panel:#101722;--text:#f7f9fc;--muted:#aab6c6;--line:rgba(255,255,255,.11);--accent:#ff5c35}
 *{box-sizing:border-box}
@@ -19,16 +19,20 @@ p{color:var(--muted);line-height:1.6;margin:0 0 14px}
 .card{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
 .card b{display:block;font-size:18px;margin-bottom:6px}
 .card span{color:var(--muted);font-size:14px;line-height:1.5}
-.stage{width:min(100%,calc((100vh - 96px) * 16 / 9));aspect-ratio:16/9;margin:0 auto 16px;background:#000;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.stage{width:min(100%,calc((100vh - 96px) * 4 / 3));aspect-ratio:4/3;margin:0 auto 16px;background:#000;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
 .stage>*{display:block;width:100%!important;height:100%!important}
 .back{font-size:14px;color:var(--muted)}
+.keys{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
+.keys button{font:inherit;font-size:15px;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
 .note{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:22px}
 </style>
 </head>
 <body><main class="page">
-<span class="eyebrow">Zixia Browser</span>
-<h1>SWF demos</h1>
-<p>Older web pages often contain SWF ("Flash") content. Zixia Browser plays it with the open-source Ruffle player. Each page below contains one SWF that loads and plays by itself; no account or download is needed.</p>
-<div class="cards"><a class="card" href="juicy-breakout.html"><b>Juicy Breakout</b><span>The paddle-and-ball game from the talk “Juice it or lose it” by Martin Jonasson and Petri Purho (zlib license). Turn the effects on and off to see how much they change the feel.</span></a><a class="card" href="animation.html"><b>Vector animation</b><span>Rotating rings of shapes, gradients and thin lines, with a live frame-rate readout: a check for smooth playback and crisp edges.</span></a><a class="card" href="game.html"><b>Tap, double-tap and keys</b><span>Tap a circle (+1), double-tap the spinning star (+5), and steer the ship to the coin (+2) with the arrow keys or the on-screen controller (≡ → Virtual Controller).</span></a><a class="card" href="sound.html"><b>Sound</b><span>Six pads, each playing a short tone generated for this demo. Tap a pad to hear it.</span></a></div>
-<p class="note">SWF ("Flash") content on these pages is played by <a href="https://ruffle.rs">Ruffle</a>, an open-source SWF player (MIT / Apache-2.0). It is not Adobe Flash Player. Juicy Breakout is by Martin Jonasson and Petri Purho (zlib license); the other demos were made for Zixia Browser.</p>
+<a class="back" href="/">返回首页</a> · <a class="back" href="juicy-breakout-play.html">Play full screen →</a>
+<h1 class="small">Juicy Breakout</h1>
+<div class="stage"><embed src="swf/JuicyBreakout.swf" type="application/x-shockwave-flash" width="100%" height="100%" bgcolor="#222222"></div>
+<div class="keys"><button onclick="zixiaPressKey('Enter','Enter',13)">All effects on (Enter)</button><button onclick="zixiaPressKey('Digit2','2',50)">All effects off (2)</button><button onclick="zixiaPressKey('KeyB','b',66)">Add a ball (B)</button><button onclick="zixiaPressKey('Space',' ',32)">Restart (Space)</button></div>
+<p>The classic paddle-and-ball game from the talk “Juice it or lose it”. Move the paddle with the mouse or by dragging a finger across the game. The game starts with all the effects on (screen shake, particles, sound, animation); turn them off to see how plain the same game feels without them.</p>
+<p class="note">SWF ("Flash") content on this page is played by <a href="https://ruffle.rs">Ruffle</a>, an open-source SWF player (MIT / Apache-2.0). It is not Adobe Flash Player. Juicy Breakout © 2012 Martin Jonasson and Petri Purho, music and sounds by Niklas Ström; released under the zlib license (<a href="swf/JuicyBreakout-LICENSE.txt">license text</a>, <a href="https://github.com/grapefrukt/juicy-breakout">source</a>). The SWF is the authors’ original build, unmodified.</p>
+<script src="keys.js"></script><script>zixiaJuiceOnLoad();</script>
 </main></body></html>
