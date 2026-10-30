@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>模拟器演示 · 紫霞浏览器</title>
+<link rel="alternate" hreflang="en" href="https://www.52zixia.com/emulator-demo/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/zh-cn/emulator-demo/">
+<link rel="alternate" hreflang="x-default" href="https://www.52zixia.com/emulator-demo/">
+<script>if(new URLSearchParams(location.search).get('lang')==='en')location.replace('/emulator-demo/?lang=en');</script>
+<style>
+:root{--bg:#070b12;--panel:#101722;--text:#f7f9fc;--muted:#aab6c6;--line:rgba(255,255,255,.11);--accent:#ff5c35}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 85% 0%,rgba(255,92,53,.16),transparent 32rem),var(--bg)}
+a{color:inherit}
+.page{width:min(860px,calc(100% - 28px));margin:0 auto;padding:28px 0 40px}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(26px,5vw,40px);margin:8px 0 10px}
+h2{font-size:20px;margin:26px 0 8px}
+p,li{color:var(--muted);line-height:1.6}
+p{margin:0 0 14px}
+ol{padding-left:22px;margin:0 0 14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:18px}
+.card b{display:block;font-size:18px;margin-bottom:6px;color:var(--text)}
+.button{display:inline-block;margin-top:10px;padding:12px 18px;border-radius:12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.back{font-size:14px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:22px}
+</style>
+</head>
+<body><main class="page">
+<a class="back" href="/zh-cn/">← 返回首页</a><br>
+<span class="eyebrow">紫霞浏览器</span>
+<h1>模拟器演示</h1>
+<p>紫霞浏览器可以打开你自己下载或导入的 FC（NES）、Game Boy、Game Boy Color 和 Game Boy Advance 游戏文件。应用内不含任何游戏。下面的游戏是可以自由分享的开源自制游戏。</p>
+<div class="card">
+<b>2048 for NES</b>
+<p>FC 版的数字滑块游戏 2048：用方向键滑动方块，合并相同的数字，凑出 2048。Select 键开关音乐。</p>
+<a class="button" href="/emulator-demo/roms/2048.nes" download>下载游戏（24 KB）</a>
+</div>
+<h2>怎么玩</h2>
+<ol>
+<li>点“下载游戏”，确认下载。</li>
+<li>在下载列表里打开下载好的文件，游戏会在内置模拟器中启动。</li>
+<li>用屏幕手柄（方向键、A、B、Start、Select）、游戏手柄或键盘操作。</li>
+</ol>
+<p class="note">2048 for NES 作者 Maciej Muszkowski（<a href="https://github.com/mmuszkow/2048-nes">源代码</a>），使用 Shiru 的 neslib 和 FamiTone2 制作；以 Unlicense 放弃版权、进入公有领域（<a href="/emulator-demo/roms/2048-LICENSE.txt">许可全文</a>）。游戏文件为该仓库中的原版构建，未经修改。原作为 Gabriele Cirulli 的 2048。紫霞浏览器使用开源模拟器内核 binjnes（MIT）和 mGBA（MPL-2.0）。</p>
+</main></body></html>
