@@ -12,14 +12,17 @@ function zixiaPressKey(code, key, keyCode) {
     }, i * 60);
   });
 }
-// Turns all effects on once the game has started (the same as pressing Enter).
+// Turns all effects on once the game is running (the same as pressing Enter). The game only
+// listens for keys after its sounds have loaded, so Enter is repeated once a second for the
+// first ten seconds; it stops as soon as the visitor presses a button or touches the game.
 function zixiaJuiceOnLoad() {
-  var done = false;
-  function juice() { if (!done) { done = true; zixiaPressKey('Enter', 'Enter', 13); } }
-  var tries = 0, timer = setInterval(function () {
+  var stopped = false, presses = 0;
+  function stop() { stopped = true; }
+  document.addEventListener('pointerdown', stop, true);
+  document.addEventListener('keydown', function (e) { if (e.isTrusted) stop(); }, true);
+  var timer = setInterval(function () {
     var player = document.querySelector('ruffle-embed, ruffle-object, ruffle-player');
-    tries++;
-    if (player && player.readyState === 2) { clearInterval(timer); setTimeout(juice, 800); }
-    else if (tries > 40) { clearInterval(timer); juice(); }
-  }, 250);
+    if (stopped || presses >= 10) { clearInterval(timer); return; }
+    if (player && player.readyState === 2) { presses++; zixiaPressKey('Enter', 'Enter', 13); }
+  }, 1000);
 }
