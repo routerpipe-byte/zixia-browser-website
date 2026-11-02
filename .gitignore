@@ -1,0 +1,3 @@
+# Installer files live in GitHub Releases, not in the repository
+*.apk
+*.dmg
