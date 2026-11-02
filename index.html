@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5f55e8">
-  <meta name="description" content="Zixia Browser brings AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools to iPhone, iPad, and Android.">
+  <meta name="description" content="Zixia Browser plays classic Flash games and your own retro game files (NES, Game Boy, GBA), with page-aware AI, ad blocking, user scripts, immersive reading and read aloud. For Mac, iPhone, iPad and Android.">
   <meta name="apple-itunes-app" content="app-id=6794041773">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Zixia Browser | Browse, read, and understand more">
-  <meta property="og:description" content="Clean browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud. Available on the App Store, Google Play, and as a direct Android APK.">
+  <meta property="og:description" content="Flash games, retro game emulator, page-aware AI, user scripts, immersive reading and read aloud. Mac (direct download), App Store, Google Play and Android APK.">
   <meta property="og:image" content="https://www.52zixia.com/assets/screens-en/1.jpg">
   <meta property="og:url" content="https://www.52zixia.com/">
   <link rel="canonical" href="https://www.52zixia.com/">
   <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/zh-cn/">
   <link rel="alternate" hreflang="en" href="https://www.52zixia.com/">
   <link rel="alternate" hreflang="x-default" href="https://www.52zixia.com/">
-  <title>Zixia Browser | iPhone, iPad &amp; Android Browser</title>
+  <title>Zixia Browser | Mac, iPhone, iPad &amp; Android Browser with Flash Games</title>
   <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/icon.png">
   <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
@@ -192,7 +192,7 @@
     .section-title { max-width: 800px; margin: 13px 0 16px; font-size: clamp(36px, 5vw, 62px); line-height: 1.16; letter-spacing: -.035em; }
     .section-lead { max-width: 720px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.8; }
 
-    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 54px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 54px; }
     .feature-card { padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: #fff; box-shadow: 0 12px 36px rgba(36,31,95,.06); }
     .feature-card-icon { width: 50px; height: 50px; display: grid; place-items: center; margin-bottom: 22px; border-radius: 16px; background: linear-gradient(145deg, #eceaff, #e7f3ff); color: #554ce0; font-size: 24px; }
     .feature-card h3 { margin: 0 0 10px; font-size: 20px; }
@@ -213,6 +213,15 @@
     .ticks li { display: flex; align-items: center; gap: 11px; color: #3d3c52; font-size: 15px; }
     .ticks li::before { content: "✓"; width: 23px; height: 23px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: #eceaff; color: #564de0; font-weight: 900; }
 
+    .mac-section { background: linear-gradient(180deg, #f8f8fc, #eef0ff); }
+    .mac-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    .mac-more { color: var(--violet-dark); border-color: rgba(100, 89, 239, .35); background: #fff; }
+    .mac-meta { margin: 16px 0 0; color: var(--muted); font-size: 13px; font-weight: 700; }
+    .mac-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .mac-grid > * { min-width: 0; }
+    .mac-grid figure { margin: 0; }
+    .mac-grid img { width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 18px 44px rgba(36, 31, 95, .12); }
+    .mac-grid figcaption { margin-top: 12px; color: var(--muted); font-size: 14px; font-weight: 700; text-align: center; }
     .gallery-section { overflow: hidden; background: #17162b; color: #fff; }
     .gallery-section .section-lead { color: rgba(255,255,255,.62); }
     .gallery-track { display: flex; gap: 20px; margin-top: 50px; overflow-x: auto; padding: 10px max(20px, calc((100vw - 1160px) / 2)) 35px; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #6158d7 transparent; }
@@ -259,6 +268,7 @@
       .hero-actions, .hero-meta { justify-content: center; }
       .hero-visual { width: min(620px, 100%); margin: -15px auto 0; }
       .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .mac-grid { grid-template-columns: 1fr; }
       .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 42px; margin-top: 80px; }
       .showcase-row.reverse .showcase-copy { order: 0; }
       .download-card { grid-template-columns: 1fr; }
@@ -321,8 +331,18 @@
       },
       {
         "@type": "SoftwareApplication",
+        "name": "Zixia Browser for Mac",
+        "operatingSystem": "macOS 12+",
+        "applicationCategory": "BrowserApplication",
+        "downloadUrl": "https://www.52zixia.com/zixia-browser-mac.dmg",
+        "softwareVersion": "1.0.4",
+        "image": "https://www.52zixia.com/assets/icon.png",
+        "description": "A Mac browser that plays Flash games and retro game files, with AI assistance, ad blocking, user scripts, immersive reading, and read-aloud tools."
+      },
+      {
+        "@type": "SoftwareApplication",
         "name": "Zixia Browser for Android",
-        "operatingSystem": "Android 4.2+",
+        "operatingSystem": "Android 7.0+",
         "applicationCategory": "BrowserApplication",
         "downloadUrl": "https://www.52zixia.com/zixia-browser-release.apk",
         "sameAs": "https://play.google.com/store/apps/details?id=com.zixia",
@@ -343,11 +363,12 @@
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#features">Features</a>
+        <a href="#mac">Mac</a>
         <a href="#screens">Screenshots</a>
         <a href="#faq">Install help</a>
         <a class="button nav-store" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">App Store</a>
         <a class="button nav-store" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">Google Play</a>
-        <a class="button nav-download" href="#download">Download apps</a>
+        <a class="button nav-download" href="./download/">Download</a>
       </nav>
     </div>
   </header>
@@ -356,9 +377,9 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-content">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>iPhone · iPad · Android</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>iPhone · iPad · Mac · Android</div>
           <h1>Browse freely.<br><span>Understand more.</span></h1>
-          <p class="hero-copy">Clean web browsing, page-aware AI, user scripts, video speed control, immersive reading, and read aloud—all in one focused browser.</p>
+          <p class="hero-copy">Classic Flash games and your own retro game files, page-aware AI, user scripts, video speed control, immersive reading and read aloud—one focused browser for Mac, iPhone, iPad and Android.</p>
           <div class="hero-actions">
             <a class="button button-app-store" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
               Download on the App Store
@@ -366,6 +387,10 @@
             <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer">
               <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
               Get it on Google Play
+            </a>
+            <a class="button button-ghost" href="./zixia-browser-mac.dmg" download>
+              <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
+              Download for Mac
             </a>
             <a class="button button-ghost" href="./zixia-browser-release.apk" download>
               <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
@@ -378,8 +403,8 @@
           </div>
           <div class="hero-meta">
             <span><i class="check">✓</i>Made for iPhone and iPad</span>
-            <span><i class="check">✓</i>Android 4.2 or later</span>
-            <span><i class="check">✓</i>Direct Android APK about 24.9 MB</span>
+            <span><i class="check">✓</i>macOS 12 or later · Apple silicon and Intel</span>
+            <span><i class="check">✓</i>Android 7.0 or later · APK 23.7 MB</span>
           </div>
         </div>
 
@@ -403,6 +428,8 @@
           <article class="feature-card reveal"><div class="feature-card-icon">✦</div><h3>Understand pages with AI</h3><p>Summarize, verify, or transform the current page and turn long content into useful information faster.</p></article>
           <article class="feature-card reveal"><div class="feature-card-icon">◉</div><h3>Block ads and trackers</h3><p>Use built-in filters, custom rules, and subscription lists to reduce distracting ads and tracking requests.</p></article>
           <article class="feature-card reveal"><div class="feature-card-icon">JS</div><h3>Extend the web with scripts</h3><p>Enable scripts by site or domain for cleaner pages, original-image viewing, and improved reading.</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">▶</div><h3>Classic Flash games</h3><p>SWF games and animations on web pages play again, with a 64-bit native player for large games, a virtual gamepad and speed control.</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">▦</div><h3>Retro game emulator</h3><p>Open your own NES, Game Boy, Game Boy Color and Game Boy Advance files, with three save slots and controller support.</p></article>
           <article class="feature-card reveal"><div class="feature-card-icon">Aa</div><h3>Read and listen your way</h3><p>Fine-tune type, spacing, colors, and page turns—or let Zixia read the page aloud.</p></article>
         </div>
       </div>
@@ -454,8 +481,8 @@
           <div class="showcase-copy">
             <div class="section-kicker">Flash Games</div>
             <h3>Classic Flash games, playable again</h3>
-            <p>SWF games and animations on web pages play right in the browser, powered by the open-source Ruffle player. Try Juicy Breakout on our <a href="/swf-demo/?lang=en">demo page</a>.</p>
-            <ul class="ticks"><li>SWF games and animations in web pages</li><li>Touch, keyboard, and game controller input</li><li>Nothing extra to install</li></ul>
+            <p>SWF games and animations on web pages play right in the browser, powered by the open-source Ruffle player. Large web games get a 64-bit native player, so they no longer stop when the page runs out of memory. Try Juicy Breakout on our <a href="/swf-demo/?lang=en">demo page</a>.</p>
+            <ul class="ticks"><li>SWF games and animations in web pages, on Mac too</li><li>Virtual gamepad, keyboard and game controller input</li><li>Game speed from 0.1× to 50×; dialogs stay inside the screen</li></ul>
           </div>
           <div class="showcase-media"><img src="./assets/screens-en/12.jpg" loading="lazy" alt="Zixia Browser playing a Flash game"></div>
         </div>
@@ -465,9 +492,29 @@
             <div class="section-kicker">Retro Games</div>
             <h3>Retro games, in your pocket</h3>
             <p>Open NES, Game Boy, Game Boy Color, and Game Boy Advance game files you download or import yourself. Zixia includes no games. Try the free, open-source Tobu Tobu Girl Deluxe from our <a href="/emulator-demo/?lang=en">demo page</a>.</p>
-            <ul class="ticks"><li>NES, GB, GBC, and GBA</li><li>Three save slots per game</li><li>On-screen controller, keyboard, and game controller</li></ul>
+            <ul class="ticks"><li>NES, GB, GBC, and GBA on Mac, iPhone, iPad and Android</li><li>Three save slots per game</li><li>On-screen controller, keyboard, and game controller</li></ul>
           </div>
           <div class="showcase-media"><img src="./assets/screens-en/13.jpg" loading="lazy" alt="Zixia Browser retro game emulator"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mac-section" id="mac">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="section-kicker">Mac</div>
+          <h2 class="section-title">Now on your Mac</h2>
+          <p class="section-lead">The same browser, Flash games, retro game emulator and reader in a native Mac app. Universal for Apple silicon and Intel, notarized by Apple, and installed by dragging to Applications.</p>
+          <div class="mac-actions">
+            <a class="button button-primary" href="./zixia-browser-mac.dmg" download><svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>Download for Mac</a>
+            <a class="button mac-more" href="./download/">All downloads &amp; install steps →</a>
+          </div>
+          <p class="mac-meta">Version 1.0.4 (118) · DMG 33.6 MB · macOS 12 Monterey or later</p>
+        </div>
+        <div class="mac-grid reveal">
+          <figure><img src="./assets/mac-en/flash.png" width="1280" height="800" loading="lazy" alt="Flash game running in Zixia Browser on Mac"><figcaption>Flash games</figcaption></figure>
+          <figure><img src="./assets/mac-en/retro.png" width="1280" height="800" loading="lazy" alt="Game Boy Color game in the Zixia Browser emulator on Mac"><figcaption>Retro game emulator</figcaption></figure>
+          <figure><img src="./assets/mac-en/listen.png" width="1280" height="800" loading="lazy" alt="Read-aloud player in Zixia Browser on Mac"><figcaption>Reading and read aloud</figcaption></figure>
         </div>
       </div>
     </section>
@@ -476,7 +523,7 @@
       <div class="wrap reveal">
         <div class="section-kicker">Screenshots</div>
         <h2 class="section-title">From the home screen to immersive reading</h2>
-        <p class="section-lead">Swipe through Zixia Browser interface screenshots. Layout and feature availability may vary by platform and system capabilities.</p>
+        <p class="section-lead">Swipe through Zixia Browser screenshots on the phone. Layout and feature availability may vary by platform and system capabilities.</p>
       </div>
       <div class="gallery-track" aria-label="Zixia Browser feature screenshots">
         <img src="./assets/screens-en/1.jpg" loading="lazy" alt="Zixia Browser home screen">
@@ -500,8 +547,8 @@
         <div class="download-card reveal">
           <div>
             <h2>Download Zixia Browser</h2>
-            <p>Install Zixia on iPhone or iPad from the App Store. On Android, get it from Google Play or download the APK directly.</p>
-            <div class="hash">Android APK SHA-256: AC534220DB8AA32E916FD1B544D94690F9C12710E0569E8E807BD5677DEA62D5</div>
+            <p>Mac: download the DMG and drag the app to Applications. iPhone and iPad: App Store. Android: Google Play or the APK. Install steps and checksums are on the <a href="./download/" style="color:#fff;text-decoration:underline">download page</a>.</p>
+            <div class="hash">Mac DMG SHA-256: 971E695A5C5F23A58F1047C4AF737CEC10AFABC37D2246D9C6A27A307AE5AFA4<br>Android APK SHA-256: AC534220DB8AA32E916FD1B544D94690F9C12710E0569E8E807BD5677DEA62D5</div>
           </div>
           <div class="download-actions">
             <a class="site-qr" href="https://www.52zixia.com/" aria-label="Open the Zixia Browser website on your phone">
@@ -516,9 +563,13 @@
                 <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.58 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>
                 Google Play
               </a>
+              <a class="button" href="./zixia-browser-mac.dmg" download>
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
+                Mac DMG
+              </a>
               <a class="button" href="./zixia-browser-release.apk" download>
                 <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
-                Download APK
+                Android APK
               </a>
             </div>
           </div>
@@ -531,9 +582,10 @@
         <div class="section-kicker">Installation</div>
         <h2 class="section-title">Installation FAQ</h2>
         <div class="faq-list">
-          <details><summary>Which devices are supported?</summary><p>Zixia is available for compatible iPhone and iPad devices through the App Store, and for Android 4.2 (API 17) and later. Features and layout may vary by platform, operating-system capabilities, and web engine.</p></details>
+          <details><summary>Which devices are supported?</summary><p>Mac with macOS 12 Monterey or later (Apple silicon and Intel), compatible iPhone and iPad devices through the App Store, and Android 7.0 or later. Features and layout may vary by platform.</p></details>
+          <details><summary>How do I install on a Mac?</summary><p>Open the downloaded DMG, drag Zixia Browser to Applications, then open it from Applications or Launchpad. The app is notarized by Apple; if macOS still asks, choose Open. Details on the <a href="./download/" style="color:#564de0;font-weight:700">download page</a>.</p></details>
           <details><summary>Why does Android show an installation warning?</summary><p>The APK is downloaded directly from this website rather than an app store. Temporarily allow your browser to install unknown apps in Android settings; you can turn that permission off after installation.</p></details>
-          <details><summary>How can I verify the APK?</summary><p>The current APK SHA-256 is AC534220DB8AA32E916FD1B544D94690F9C12710E0569E8E807BD5677DEA62D5. Compare it with a system or third-party checksum tool.</p></details>
+          <details><summary>How can I verify a download?</summary><p>Mac DMG SHA-256: 971E695A5C5F23A58F1047C4AF737CEC10AFABC37D2246D9C6A27A307AE5AFA4. Android APK SHA-256: AC534220DB8AA32E916FD1B544D94690F9C12710E0569E8E807BD5677DEA62D5. Compare with a system or third-party checksum tool.</p></details>
           <details><summary>Where are the Privacy Policy and Terms of Use?</summary><p>Read the <a href="./privacy/" style="color:#564de0;font-weight:700">Zixia Browser Privacy Policy</a> and <a href="./terms/" style="color:#564de0;font-weight:700">Terms of Use</a>.</p></details>
         </div>
       </div>
