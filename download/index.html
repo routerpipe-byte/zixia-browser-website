@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5f55e8">
-  <meta name="description" content="Get Zixia Browser: Mac (DMG, Apple silicon and Intel), iPhone and iPad on the App Store, Android on Google Play or as a direct APK. Flash games, retro game emulator, reader and AI tools.">
+  <meta name="description" content="Get Zixia Browser: Mac (DMG, Apple silicon and Intel), Windows 10 and 11 (installer), iPhone and iPad on the App Store, Android on Google Play or as a direct APK. Flash games, retro game emulator, reader and AI tools.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Download Zixia Browser for Mac, iPhone, iPad & Android">
-  <meta property="og:description" content="Get Zixia Browser: Mac (DMG, Apple silicon and Intel), iPhone and iPad on the App Store, Android on Google Play or as a direct APK. Flash games, retro game emulator, reader and AI tools.">
+  <meta property="og:title" content="Download Zixia Browser for Mac, Windows, iPhone, iPad & Android">
+  <meta property="og:description" content="Get Zixia Browser: Mac (DMG, Apple silicon and Intel), Windows 10 and 11 (installer), iPhone and iPad on the App Store, Android on Google Play or as a direct APK. Flash games, retro game emulator, reader and AI tools.">
   <meta property="og:image" content="https://www.52zixia.com/assets/mac-en/flash.png">
   <meta property="og:url" content="https://www.52zixia.com/download/">
   <link rel="canonical" href="https://www.52zixia.com/download/">
   <link rel="alternate" hreflang="en" href="https://www.52zixia.com/download/">
   <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/zh-cn/download/">
   <link rel="alternate" hreflang="x-default" href="https://www.52zixia.com/download/">
-  <title>Download Zixia Browser for Mac, iPhone, iPad & Android</title>
+  <title>Download Zixia Browser for Mac, Windows, iPhone, iPad & Android</title>
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/icon.png">
   <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
@@ -56,14 +56,14 @@
     .detect { display: none; margin: 18px auto 0; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.14); font-size: 13px; width: max-content; max-width: 100%; }
     .detect.visible { display: block; }
     .platforms { position: relative; z-index: 2; margin-top: -100px; padding-bottom: 20px; }
-    .platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .platform { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 34px 30px 30px; border: 1px solid var(--line); border-radius: 30px; background: #fff; box-shadow: var(--shadow); }
+    .platform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .platform { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 30px 22px 26px; border: 1px solid var(--line); border-radius: 28px; background: #fff; box-shadow: var(--shadow); }
     .platform.highlight { outline: 3px solid rgba(100, 89, 239, .55); outline-offset: -3px; }
     .platform-icon { width: 44px; height: 44px; color: #3f38aa; }
-    .platform h2 { margin: 6px 0 0; font-size: 28px; letter-spacing: -.02em; }
+    .platform h2 { margin: 6px 0 0; font-size: 25px; letter-spacing: -.02em; }
     .platform .req { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
     .platform .actions { display: grid; gap: 10px; margin-top: 8px; }
-    .platform .actions .button { width: 100%; }
+    .platform .actions .button { width: 100%; padding: 6px 14px; text-align: center; }
     .platform .sub { margin: 0; color: var(--muted); font-size: 13px; font-weight: 700; }
     .platform .note { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
     .platform .hash { margin: auto 0 0; padding-top: 12px; border-top: 1px dashed var(--line); color: #8a89a3; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 10.5px; line-height: 1.5; overflow-wrap: anywhere; }
@@ -95,6 +95,7 @@
     footer { padding: 40px 0; color: var(--muted); font-size: 13px; }
     .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     .footer-links { display: flex; gap: 20px; }
+    @media (max-width: 1180px) { .platform-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 960px) {
       .nav-links a:not(.nav-lang):not(.nav-home) { display: none; }
       .platform-grid { grid-template-columns: 1fr; }
@@ -134,8 +135,8 @@
       <div class="wrap">
         <div class="kicker">Download</div>
         <h1>Download Zixia Browser</h1>
-        <p>Flash games, retro game emulator, immersive reading and AI tools on Mac, iPhone, iPad and Android. Pick your platform below.</p>
-        <div class="detect" id="detect" data-mac="You seem to be on a Mac." data-ios="You seem to be on an iPhone or iPad." data-android="You seem to be on Android."></div>
+        <p>Flash games, retro game emulator, immersive reading and AI tools on Mac, Windows, iPhone, iPad and Android. Pick your platform below.</p>
+        <div class="detect" id="detect" data-mac="You seem to be on a Mac." data-windows="You seem to be on Windows." data-ios="You seem to be on an iPhone or iPad." data-android="You seem to be on Android."></div>
       </div>
     </section>
 
@@ -151,6 +152,18 @@
           <p class="sub">DMG · 34.2 MB · Version 1.0.6 (124)</p>
           <p class="note">Notarized by Apple. Opens as a normal Mac app; no App Store account needed.</p>
           <p class="hash">SHA-256 58B25CE52B318B5A348A267D0CEF9DCB0737A0D6FB4F04947093D43A82B22645</p>
+        </article>
+        <article class="platform" id="windows" data-platform="windows">
+          <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.1 10.4 4v7.2H3V5.1Zm8.4-1.3L21 2.4v8.8h-9.6V3.8ZM3 12.6h7.4v7.3L3 18.9v-6.3Zm8.4 0H21v9l-9.6-1.4v-7.6Z"/></svg>
+          <h2>Windows</h2>
+          <p class="req">Windows 10 or 11 · 64-bit</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://game.zixia.com/gowd.php?game=zixiabrowser&amp;direct=1"><svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>Download for Windows</a>
+            <a class="button button-ghost" href="https://game.zixia.com/gowd.php?game=zxyx&amp;direct=1"><svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>Classic edition</a>
+          </div>
+          <p class="sub">Installer · 19.4 MB · Version 1.0.0</p>
+          <p class="note">Small and quick to start, with a built-in native Flash player, game speed control and text translation. The Classic edition (Chromium with the original Flash player, about 220 MB) is there for games that need it; both can be installed side by side.</p>
+          <p class="hash">SHA-256 6D85CDE6F67832791A257BF52707E3C12FFAF55A1B9D8B296C5403FD43FC9254</p>
         </article>
         <article class="platform" id="ios" data-platform="ios">
           <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.63c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.77 1.1 1.68 2.35 2.87 2.3 1.15-.05 1.59-.75 2.98-.75s1.78.75 3 .72c1.24-.02 2.03-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.41-.93-2.43-3.69ZM14.1 5.9c.63-.77 1.06-1.84.94-2.9-.91.04-2.01.6-2.66 1.37-.58.67-1.1 1.76-.96 2.8 1.01.08 2.05-.52 2.68-1.27Z"/></svg>
@@ -168,11 +181,11 @@
           <p class="req">Android 7.0 or later · phones and tablets</p>
           <div class="actions">
             <a class="button button-dark" href="https://play.google.com/store/apps/details?id=com.zixia" target="_blank" rel="noopener noreferrer"><svg class="download-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 3.2 14.8 12 4.6 20.8a2 2 0 0 1-.6-1.45V4.65c0-.56.22-1.08.6-1.45Zm11.55 9.96 2.77 2.39-11.4 6.23 8.63-8.62Zm4.12-2.36c.98.54.98 1.86 0 2.4l-1.76.96-2.95-2.55 2.95-2.55 1.76.96Zm-12.75-8.3 11.4 6.23-2.77 2.39-8.63-8.62Z"/></svg>Get it on Google Play</a>
-            <a class="button button-ghost" href="https://github.com/routerpipe-byte/zixia-browser-website/releases/latest/download/zixia-browser-release.apk" download><svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>Download APK directly</a>
+            <a class="button button-ghost" href="https://game.zixia.com/gowd.php?game=zxyx&amp;pkg=android&amp;direct=1"><svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>Download APK directly</a>
           </div>
-          <p class="sub">APK · 23.7 MB · Version 15.14.52</p>
+          <p class="sub">APK · 23.9 MB · Version 15.14.53</p>
           <p class="note">Use Google Play where it is available; the APK is the same app for devices without Play.</p>
-          <p class="hash">SHA-256 4B5E2B67E3B7B5AC0E48C77820261DE0ABD040624340E47F56BE7EFB68E29C12</p>
+          <p class="hash">SHA-256 CBEA30048149E22491FDE0E183AB3DDAD8EE52A94F3F15D794F93C10E26D7A97</p>
         </article>
       </div>
     </section>
@@ -217,10 +230,11 @@
       <div class="wrap">
         <div class="section-kicker">Verify</div>
         <h2 class="section-title">Check the file you downloaded</h2>
-        <p class="section-lead">Compare the SHA-256 of the file with the values below. On a Mac: <code>shasum -a 256 ~/Downloads/zixia-browser-mac.dmg</code>.</p>
+        <p class="section-lead">Compare the SHA-256 of the file with the values below. On a Mac: <code>shasum -a 256 ~/Downloads/zixia-browser-mac.dmg</code>. On Windows, in PowerShell: <code>Get-FileHash &lt;file&gt;</code>.</p>
         <div class="verify-grid">
           <div class="verify-row"><strong>zixia-browser-mac.dmg · 1.0.6 (124)</strong><span>58B25CE52B318B5A348A267D0CEF9DCB0737A0D6FB4F04947093D43A82B22645</span></div>
-          <div class="verify-row"><strong>zixia-browser-release.apk · 15.14.52</strong><span>4B5E2B67E3B7B5AC0E48C77820261DE0ABD040624340E47F56BE7EFB68E29C12</span></div>
+          <div class="verify-row"><strong>Android APK · 15.14.53</strong><span>CBEA30048149E22491FDE0E183AB3DDAD8EE52A94F3F15D794F93C10E26D7A97</span></div>
+          <div class="verify-row"><strong>Windows installer · 1.0.0</strong><span>6D85CDE6F67832791A257BF52707E3C12FFAF55A1B9D8B296C5403FD43FC9254</span></div>
         </div>
         <a class="qr-box" href="https://www.52zixia.com/download/"><img src="../assets/site-download-qr.png" width="84" height="84" loading="lazy" alt="QR code for www.52zixia.com"><span>Scan to open this page on your phone</span></a>
       </div>
@@ -233,6 +247,7 @@
         <div class="faq-list">
           <details><summary>Which Mac models are supported?</summary><p>Any Mac running macOS 12 Monterey or later, with an Apple silicon (M1, M2, M3, M4…) or Intel processor. The app is a universal binary, so it runs natively on both.</p></details>
           <details><summary>macOS says the app cannot be opened.</summary><p>The app is notarized, so this normally does not happen. If it does, control-click the app in Applications and choose Open, or allow it under System Settings → Privacy &amp; Security. Make sure you copied the app out of the disk image first.</p></details>
+          <details><summary>Windows shows a warning when I run the installer.</summary><p>The installer is not code-signed yet, so Microsoft Defender SmartScreen or your browser may warn about it. Check the SHA-256 against the value on this page, then choose More info → Run anyway. Security software may also ask you to trust the file.</p></details>
           <details><summary>Why does Android show an installation warning?</summary><p>The APK is downloaded directly from this website rather than an app store. Temporarily allow your browser to install unknown apps in system settings, then turn the permission off after installing.</p></details>
           <details><summary>Where are the Privacy Policy and Terms of Use?</summary><p>Read the <a href="../privacy/">Zixia Browser Privacy Policy</a> and <a href="../terms/">Terms of Use</a>.</p></details>
         </div>
@@ -253,7 +268,7 @@
       const ua = navigator.userAgent || '';
       const platform = navigator.platform || '';
       const isIOS = /iPad|iPhone|iPod/i.test(ua) || (platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      const key = isIOS ? 'ios' : /Android/i.test(ua) ? 'android' : /Mac/i.test(platform) ? 'mac' : null;
+      const key = isIOS ? 'ios' : /Android/i.test(ua) ? 'android' : /Mac/i.test(platform) ? 'mac' : /Win/i.test(platform) ? 'windows' : null;
       if (!key) return;
       const card = document.querySelector('[data-platform="' + key + '"]');
       const detect = document.getElementById('detect');

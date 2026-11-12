@@ -25,7 +25,7 @@
     button.href = 'intent://play.google.com/store/apps/details?id=com.zixia' +
       '#Intent;scheme=https;package=com.android.vending;' +
       'S.browser_fallback_url=' +
-      encodeURIComponent('https://github.com/routerpipe-byte/zixia-browser-website/releases/latest/download/zixia-browser-release.apk') +
+      encodeURIComponent('https://game.zixia.com/gowd.php?game=zxyx&pkg=android&direct=1') +
       ';end';
   }
 })();

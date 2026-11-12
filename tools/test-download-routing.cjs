@@ -7,7 +7,7 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'assets/download-routing.js'), 'utf8');
 const appStore = 'https://apps.apple.com/app/id6794041773';
-const apk = 'https://www.52zixia.com/zixia-browser-release.apk';
+const apk = 'https://game.zixia.com/gowd.php?game=zxyx&pkg=android&direct=1';
 
 function route(navigatorProperties, hasButton = true) {
   const attributes = new Map([['href', '#download']]);

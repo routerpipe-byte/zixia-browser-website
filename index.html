@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5f55e8">
-  <meta name="description" content="Zixia Browser plays classic Flash games and your own retro game files (NES, Game Boy, GBA), with page-aware AI, ad blocking, user scripts, immersive reading and read aloud. For Mac, iPhone, iPad and Android.">
+  <meta name="description" content="Zixia Browser plays classic Flash games and your own retro game files (NES, Game Boy, GBA), with page-aware AI, ad blocking, user scripts, game text translation, immersive reading and read aloud. For Mac, Windows, iPhone, iPad and Android.">
   <meta name="apple-itunes-app" content="app-id=6794041773">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Zixia Browser | Browse, read, and understand more">
-  <meta property="og:description" content="Flash games, retro game emulator, page-aware AI, user scripts, immersive reading and read aloud. Mac (direct download), App Store, Google Play and Android APK.">
+  <meta property="og:description" content="Flash games, retro game emulator, page-aware AI, user scripts, immersive reading and read aloud. Mac and Windows (direct download), App Store, Google Play and Android APK.">
   <meta property="og:image" content="https://www.52zixia.com/assets/screens-en/1.jpg">
   <meta property="og:url" content="https://www.52zixia.com/">
   <link rel="canonical" href="https://www.52zixia.com/">
   <link rel="alternate" hreflang="zh-CN" href="https://www.52zixia.com/zh-cn/">
   <link rel="alternate" hreflang="en" href="https://www.52zixia.com/">
   <link rel="alternate" hreflang="x-default" href="https://www.52zixia.com/">
-  <title>Zixia Browser | Mac, iPhone, iPad &amp; Android Browser with Flash Games</title>
+  <title>Zixia Browser | Mac, Windows, iPhone, iPad &amp; Android Browser with Flash Games</title>
   <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/icon.png">
   <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
@@ -206,6 +206,8 @@
     .showcase-media { position: relative; min-height: 670px; display: grid; place-items: center; overflow: hidden; border-radius: 36px; background: linear-gradient(145deg, #f0efff, #e9f3ff); }
     .showcase-media::before { content: ""; position: absolute; width: 440px; height: 440px; border-radius: 50%; background: rgba(100,89,239,.13); filter: blur(8px); }
     .showcase-media img { position: relative; width: min(370px, 75%); border-radius: 34px; box-shadow: var(--shadow); }
+    .showcase-media.wide { min-height: 0; padding: 64px 0; }
+    .showcase-media.wide img { width: 90%; height: auto; border-radius: 14px; }
     .showcase-copy h3 { margin: 15px 0 18px; font-size: clamp(34px, 4vw, 54px); line-height: 1.18; letter-spacing: -.03em; }
     .showcase-copy p { margin: 0 0 24px; color: var(--muted); font-size: 17px; line-height: 1.85; }
     .showcase-copy p a { color: var(--violet); font-weight: 700; }
@@ -341,10 +343,20 @@
       },
       {
         "@type": "SoftwareApplication",
+        "name": "Zixia Browser for Windows",
+        "operatingSystem": "Windows 10, Windows 11",
+        "applicationCategory": "BrowserApplication",
+        "downloadUrl": "https://game.zixia.com/gowd.php?game=zixiabrowser&direct=1",
+        "softwareVersion": "1.0.0",
+        "image": "https://www.52zixia.com/assets/icon.png",
+        "description": "A Windows browser with a built-in native Flash player for classic Flash games, plus game speed control, game text translation, ad blocking and user scripts."
+      },
+      {
+        "@type": "SoftwareApplication",
         "name": "Zixia Browser for Android",
         "operatingSystem": "Android 7.0+",
         "applicationCategory": "BrowserApplication",
-        "downloadUrl": "https://github.com/routerpipe-byte/zixia-browser-website/releases/latest/download/zixia-browser-release.apk",
+        "downloadUrl": "https://game.zixia.com/gowd.php?game=zxyx&pkg=android&direct=1",
         "sameAs": "https://play.google.com/store/apps/details?id=com.zixia",
         "image": "https://www.52zixia.com/assets/icon.png",
         "description": "An Android browser with AI assistance, ad blocking, user scripts, web video speed control, immersive reading, and read-aloud tools."
@@ -377,9 +389,9 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-content">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>iPhone · iPad · Mac · Android</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>iPhone · iPad · Mac · Windows · Android</div>
           <h1>Browse freely.<br><span>Understand more.</span></h1>
-          <p class="hero-copy">Classic Flash games and your own retro game files, page-aware AI, user scripts, video speed control, immersive reading and read aloud—one focused browser for Mac, iPhone, iPad and Android.</p>
+          <p class="hero-copy">Classic Flash games and your own retro game files, page-aware AI, user scripts, video speed control, immersive reading and read aloud—one focused browser for Mac, Windows, iPhone, iPad and Android.</p>
           <div class="hero-actions">
             <a class="button button-app-store" href="https://apps.apple.com/app/id6794041773" target="_blank" rel="noopener noreferrer">
               Download on the App Store
@@ -392,7 +404,11 @@
               <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
               Download for Mac
             </a>
-            <a class="button button-ghost" href="https://github.com/routerpipe-byte/zixia-browser-website/releases/latest/download/zixia-browser-release.apk" download>
+            <a class="button button-ghost" href="https://game.zixia.com/gowd.php?game=zixiabrowser&amp;direct=1">
+              <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
+              Download for Windows
+            </a>
+            <a class="button button-ghost" href="https://game.zixia.com/gowd.php?game=zxyx&amp;pkg=android&amp;direct=1">
               <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
               Download Android APK
             </a>
@@ -404,7 +420,8 @@
           <div class="hero-meta">
             <span><i class="check">✓</i>Made for iPhone and iPad</span>
             <span><i class="check">✓</i>macOS 12 or later · Apple silicon and Intel</span>
-            <span><i class="check">✓</i>Android 7.0 or later · APK 23.7 MB</span>
+            <span><i class="check">✓</i>Windows 10 or 11 · installer 19.4 MB</span>
+            <span><i class="check">✓</i>Android 7.0 or later · APK 23.9 MB</span>
           </div>
         </div>
 
@@ -428,7 +445,7 @@
           <article class="feature-card reveal"><div class="feature-card-icon">✦</div><h3>Understand pages with AI</h3><p>Summarize, verify, or transform the current page and turn long content into useful information faster.</p></article>
           <article class="feature-card reveal"><div class="feature-card-icon">◉</div><h3>Block ads and trackers</h3><p>Use built-in filters, custom rules, and subscription lists to reduce distracting ads and tracking requests.</p></article>
           <article class="feature-card reveal"><div class="feature-card-icon">JS</div><h3>Extend the web with scripts</h3><p>Enable scripts by site or domain for cleaner pages, original-image viewing, and improved reading.</p></article>
-          <article class="feature-card reveal"><div class="feature-card-icon">▶</div><h3>Classic Flash games</h3><p>SWF games and animations on web pages play again, with a 64-bit native player for large games, a virtual gamepad and speed control.</p></article>
+          <article class="feature-card reveal"><div class="feature-card-icon">▶</div><h3>Classic Flash games</h3><p>SWF games and animations on web pages play again, with a 64-bit native player for large games, a virtual gamepad, speed control and game text translation.</p></article>
           <article class="feature-card reveal"><div class="feature-card-icon">▦</div><h3>Retro game emulator</h3><p>Open your own NES, Game Boy, Game Boy Color and Game Boy Advance files, with three save slots and controller support.</p></article>
           <article class="feature-card reveal"><div class="feature-card-icon">Aa</div><h3>Read and listen your way</h3><p>Fine-tune type, spacing, colors, and page turns—or let Zixia read the page aloud.</p></article>
         </div>
@@ -489,6 +506,16 @@
 
         <div class="showcase-row reverse reveal">
           <div class="showcase-copy">
+            <div class="section-kicker">Game Translation</div>
+            <h3>Play web games in your language</h3>
+            <p>Turn on translation and the quests, dialogue, menus and tips inside Flash web games appear in your language as you play, while the graphics and controls stay the same. Web pages can be translated too.</p>
+            <ul class="ticks"><li>Quests, dialogue and menus translated in real time</li><li>Follows your system language; switch any time</li><li>Works together with speed control and the gamepad</li></ul>
+          </div>
+          <div class="showcase-media wide"><img src="./assets/translate-en.jpg" width="1600" height="712" loading="lazy" alt="A Chinese web game translated into English in Zixia Browser: quest list, dialogue and system messages in English"></div>
+        </div>
+
+        <div class="showcase-row reveal">
+          <div class="showcase-copy">
             <div class="section-kicker">Retro Games</div>
             <h3>Retro games, in your pocket</h3>
             <p>Open NES, Game Boy, Game Boy Color, and Game Boy Advance game files you download or import yourself. Zixia includes no games. Try the free, open-source Tobu Tobu Girl Deluxe from our <a href="/emulator-demo/?lang=en">demo page</a>.</p>
@@ -547,8 +574,8 @@
         <div class="download-card reveal">
           <div>
             <h2>Download Zixia Browser</h2>
-            <p>Mac: download the DMG and drag the app to Applications. iPhone and iPad: App Store. Android: Google Play or the APK. Install steps and checksums are on the <a href="./download/" style="color:#fff;text-decoration:underline">download page</a>.</p>
-            <div class="hash">Mac DMG SHA-256: 58B25CE52B318B5A348A267D0CEF9DCB0737A0D6FB4F04947093D43A82B22645<br>Android APK SHA-256: 4B5E2B67E3B7B5AC0E48C77820261DE0ABD040624340E47F56BE7EFB68E29C12</div>
+            <p>Mac: download the DMG and drag the app to Applications. Windows: download and run the installer. iPhone and iPad: App Store. Android: Google Play or the APK. Install steps and checksums are on the <a href="./download/" style="color:#fff;text-decoration:underline">download page</a>.</p>
+            <div class="hash">Mac DMG SHA-256: 58B25CE52B318B5A348A267D0CEF9DCB0737A0D6FB4F04947093D43A82B22645<br>Android APK SHA-256: CBEA30048149E22491FDE0E183AB3DDAD8EE52A94F3F15D794F93C10E26D7A97<br>Windows installer SHA-256: 6D85CDE6F67832791A257BF52707E3C12FFAF55A1B9D8B296C5403FD43FC9254</div>
           </div>
           <div class="download-actions">
             <a class="site-qr" href="https://www.52zixia.com/" aria-label="Open the Zixia Browser website on your phone">
@@ -567,7 +594,11 @@
                 <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
                 Mac DMG
               </a>
-              <a class="button" href="https://github.com/routerpipe-byte/zixia-browser-website/releases/latest/download/zixia-browser-release.apk" download>
+              <a class="button" href="https://game.zixia.com/gowd.php?game=zixiabrowser&amp;direct=1">
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
+                Windows
+              </a>
+              <a class="button" href="https://game.zixia.com/gowd.php?game=zxyx&amp;pkg=android&amp;direct=1">
                 <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M5 20h14"/></svg>
                 Android APK
               </a>
@@ -582,10 +613,10 @@
         <div class="section-kicker">Installation</div>
         <h2 class="section-title">Installation FAQ</h2>
         <div class="faq-list">
-          <details><summary>Which devices are supported?</summary><p>Mac with macOS 12 Monterey or later (Apple silicon and Intel), compatible iPhone and iPad devices through the App Store, and Android 7.0 or later. Features and layout may vary by platform.</p></details>
+          <details><summary>Which devices are supported?</summary><p>Mac with macOS 12 Monterey or later (Apple silicon and Intel), PCs with Windows 10 or 11, compatible iPhone and iPad devices through the App Store, and Android 7.0 or later. Features and layout may vary by platform.</p></details>
           <details><summary>How do I install on a Mac?</summary><p>Open the downloaded DMG, drag Zixia Browser to Applications, then open it from Applications or Launchpad. The app is notarized by Apple; if macOS still asks, choose Open. Details on the <a href="./download/" style="color:#564de0;font-weight:700">download page</a>.</p></details>
           <details><summary>Why does Android show an installation warning?</summary><p>The APK is downloaded directly from this website rather than an app store. Temporarily allow your browser to install unknown apps in Android settings; you can turn that permission off after installation.</p></details>
-          <details><summary>How can I verify a download?</summary><p>Mac DMG SHA-256: 58B25CE52B318B5A348A267D0CEF9DCB0737A0D6FB4F04947093D43A82B22645. Android APK SHA-256: 4B5E2B67E3B7B5AC0E48C77820261DE0ABD040624340E47F56BE7EFB68E29C12. Compare with a system or third-party checksum tool.</p></details>
+          <details><summary>How can I verify a download?</summary><p>Mac DMG SHA-256: 58B25CE52B318B5A348A267D0CEF9DCB0737A0D6FB4F04947093D43A82B22645. Android APK SHA-256: CBEA30048149E22491FDE0E183AB3DDAD8EE52A94F3F15D794F93C10E26D7A97. Windows installer SHA-256: 6D85CDE6F67832791A257BF52707E3C12FFAF55A1B9D8B296C5403FD43FC9254. Compare with a system or third-party checksum tool.</p></details>
           <details><summary>Where are the Privacy Policy and Terms of Use?</summary><p>Read the <a href="./privacy/" style="color:#564de0;font-weight:700">Zixia Browser Privacy Policy</a> and <a href="./terms/" style="color:#564de0;font-weight:700">Terms of Use</a>.</p></details>
         </div>
       </div>
