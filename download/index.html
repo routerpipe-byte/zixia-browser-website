@@ -95,6 +95,13 @@
     footer { padding: 40px 0; color: var(--muted); font-size: 13px; }
     .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     .footer-links { display: flex; gap: 20px; }
+    /* Browser extension: a full-width card under the four platforms; removed on phones and tablets */
+    .platform-ext { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 22px; padding: 24px 26px; }
+    .platform-ext .platform-icon { flex: none; }
+    .platform-ext .ext-text { flex: 1; min-width: 0; display: grid; gap: 6px; }
+    .platform-ext h2 { margin: 0; }
+    .platform-ext .actions { flex: none; margin: 0; }
+    @media (max-width: 760px) { .platform-ext { flex-direction: column; align-items: stretch; gap: 14px; } }
     @media (max-width: 1180px) { .platform-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 960px) {
       .nav-links a:not(.nav-lang):not(.nav-home) { display: none; }
@@ -187,6 +194,17 @@
           <p class="note">Use Google Play where it is available; the APK is the same app for devices without Play.</p>
           <p class="hash">SHA-256 CBEA30048149E22491FDE0E183AB3DDAD8EE52A94F3F15D794F93C10E26D7A97</p>
         </article>
+        <article class="platform platform-ext" id="extension">
+          <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.7 2.7 0 0 1 0 5.4H2V20a2 2 0 0 0 2 2h3.8v-1.5a2.7 2.7 0 0 1 5.4 0V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5Z"/></svg>
+          <div class="ext-text">
+            <h2>Chrome extension</h2>
+            <p class="req">Prefer to keep your own browser? Add the Zixia Flash Game Helper extension to Chrome and play Flash browser games right there, with speed control and game translation.</p>
+            <p class="note">For Chrome and other Chromium-based browsers on a computer.</p>
+          </div>
+          <div class="actions">
+            <a class="button button-dark" href="https://chromewebstore.google.com/detail/ccaedklnpmbdimlcpdmkmogcbbfpilhj" target="_blank" rel="noopener noreferrer">Chrome Web Store</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -269,6 +287,9 @@
       const platform = navigator.platform || '';
       const isIOS = /iPad|iPhone|iPod/i.test(ua) || (platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       const key = isIOS ? 'ios' : /Android/i.test(ua) ? 'android' : /Mac/i.test(platform) ? 'mac' : /Win/i.test(platform) ? 'windows' : null;
+      // Browser extensions cannot be installed on phones and tablets.
+      const extension = document.getElementById('extension');
+      if (extension && (key === 'ios' || key === 'android')) extension.remove();
       if (!key) return;
       const card = document.querySelector('[data-platform="' + key + '"]');
       const detect = document.getElementById('detect');
